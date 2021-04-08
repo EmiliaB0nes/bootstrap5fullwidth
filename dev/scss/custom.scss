@@ -1,0 +1,390 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/*
+Theme Name: Unamed
+Theme URI: 
+Author: Luc Flemming
+Author URI: https://lflemming.space
+Description: Theme in developpement
+Tags: 
+Version: 0.1
+License: CC BY-SA 4.0
+License URI: https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1
+*/
+
+/***************************
+ * Importation des polices *
+ ***************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+$color1: #292320;
+$color2: #487b89;
+$color3: #f4d58d;
+$color4: #eec190;
+$color5: #cc4e1f;
+
+/******************************************************************************
+  * Sidebar                                                                    *
+  * Inspiré de : https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp *
+  ******************************************************************************/
+
+.navbox {
+	margin: 10px 1% 0px 0.9%;
+}
+
+.sidebar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: $color1;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.menu-item {
+	list-style-type: none;
+}
+
+.sidebar a {
+	font-family: "Bebas Neue", cursive;
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #fff;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.openbtn {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+	padding: 10px 0px;
+	border: none;
+}
+
+#menu {
+	transition: margin-left 0.5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+	.sidebar {
+		padding-top: 15px;
+	}
+	.sidebar a {
+		font-size: 18px;
+	}
+}
+
+/*******************
+ * Correction Body *
+ *******************/
+
+body {
+	/*Correction pour fixer le menu en top */
+	padding-top: 90px;
+	/*Couleur par défaut du site pour enlever l'espace blanc avant le fixed footer*/
+	background-color: #292320;
+	/*Remplire la page sans pour autant fixer le footer*/
+	/* Inspiré de : https://medium.com/@mschenk22/bootstrap-4-footer-at-bottom-not-sticky-dynamic-footer-height-b37ccec837e2 */
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+/************************************************************************
+ * Je n'arrive malheureusement pas à faire fonctionner correctement RFS *
+ * Il faut que je refasse toutes les tailles                            *
+ * https://getbootstrap.com/docs/5.0/getting-started/rfs/               *
+ ************************************************************************/
+
+/************************
+ * Espacement des blocs *
+ ************************/
+
+.container-xxl {
+	max-width: 1600px;
+}
+
+@media (max-width: 1690px) {
+	.container-xxl {
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+}
+
+.formright .row {
+	height: 100%;
+}
+
+.modalcenter .form-control{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 7%;
+}
+
+.btn-modal-send{
+	margin-top: 20px;
+}
+
+.message-area{
+    height: 100%;
+	resize: none;
+}
+
+.modal-content{
+	overflow-y: auto;
+}
+
+@media (min-width: 480px) {
+	.message-area {
+		margin-top:0px !important;
+	}
+	.modal-body{
+		padding-top:0px;
+	}
+}
+@media (max-width: 480px) {
+	.modal-body{
+		padding-top:0px !important;
+	}
+}
+
+
+.titlearea {
+	@include padding-top (6rem);
+	@include padding-bottom (6rem);
+}
+
+@media (max-width: 991.5px) {
+	.titlearea {
+		@include padding-top (4rem);
+		@include padding-bottom (3rem);
+	}
+}
+
+.titlearea .row div:last-child {
+	padding-top: 0.5vw;
+}
+
+.titleseparationarea {
+	@include padding-top(2.5rem);
+	@include padding-bottom(2.05rem);
+}
+
+.titleseparationarea h2 {
+	margin-bottom: 0px;
+}
+
+.bulletarea {
+	/*
+    padding-top: calc(2.5rem + 4.5vw);
+    padding-bottom: calc(2.5rem + 4.5vw);
+    */
+	@include padding-top(6.5rem);
+	@include padding-bottom(6.5rem);
+}
+
+@media (max-width: 991.5px) {
+	.bulletarea {
+	@include padding-top(5rem);
+	@include padding-bottom(5rem);
+	}
+}
+
+.bulletarea .row:not(:last-child) .bulletcomponent {
+	padding-bottom: 70px;
+}
+
+@media (max-width: 991.5px) {
+	.bulletcomponent {
+		padding-bottom: 70px;
+	}
+	.bulletarea .row:last-child .bulletcomponent:last-child {
+		padding-bottom: 0px;
+	}
+}
+
+.bulletarea .row p {
+	margin-bottom: 0px;
+}
+
+.textarea1 {
+	@include padding-top(5rem);
+	@include padding-bottom(5rem);
+}
+
+@media (max-width: 991.5px) {
+	.textarea1 {
+	@include padding-top(3.7rem);
+	@include padding-bottom(3.7rem);
+	}
+}
+
+
+.portfolioImg{
+	width: 100%;
+	padding-bottom: 80px;
+}
+
+.portfolioArea{
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+.portfolioArea p{
+	padding-left: 0px;
+	padding-right: 0px;
+
+}
+
+
+footer p {
+	margin-bottom: 0px;
+}
+
+/****************
+ * Mise en page *
+ ****************/
+
+body p {
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+.navbar {
+	padding-top: 0px;
+}
+
+.navbar-dark {
+	color: white;
+}
+
+.bg-dark {
+	background-color: $color1 !important;
+}
+
+.navbar .menu {
+	font-size: 1.3rem;
+}
+
+.navbar .btn {
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 1.3rem;
+}
+
+.btn-primary {
+	background-color: $color5;
+	border-color: $color5;
+}
+
+.modal-content {
+	background-color: $color4;
+}
+
+.modaltitle{
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: bold;
+	margin-top: 4%;
+	font-size: 4rem;
+}
+
+
+
+
+.titlearea h1 {
+	font-family: "Bebas Neue", cursive;
+	@include font-size (11rem);
+	color: $color3;
+}
+
+.titlearea p {
+	@include font-size (2.7rem);
+}
+
+@media (max-width: 991.5px) {
+	.titlearea h1 {
+		@include font-size (10rem);
+	}
+	.titlearea p {
+		@include font-size (2.3rem);
+	}
+}
+
+.contentcolor1 {
+	background-color: $color1;
+	color: white;
+}
+
+.titleseparationarea {
+	background-color: $color2;
+	color: white;
+}
+
+.titleseparationarea h2 {
+	font-family: "Bebas Neue", cursive;
+	@include font-size (3rem);
+	font-weight: bold;
+	color: $color3;
+	align-content: center !important;
+}
+
+.rounded-circle {
+	background-color: $color3;
+	height: 210px;
+	width: 210px;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.rounded-circle img {
+	transform: scale(0.6);
+}
+
+.bulletarea p {
+	font-family: "Source Sans Pro", sans-serif;
+	color: white;
+	@include font-size(1.9rem);
+}
+
+.textarea1 p {
+	font-family: "Source Sans Pro", sans-serif;
+	color: white;
+	@include font-size(1.9rem);
+}
+
+footer p {
+	font-family: "Source Sans Pro", sans-serif;
+	color: white;
+	@include font-size(1.8rem);
+}
+
+footer a {
+	color: white;
+	text-decoration: none;
+}
+
+/*Cette classe n'existe plus sur bootstrap 5 */
+
+.text-justify {
+	text-align: justify;
+	text-justify: inter-word;
+}
