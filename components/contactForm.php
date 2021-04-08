@@ -20,19 +20,19 @@
                             <div class="row">
                                 <div class="col-sm-5 col-12">
                                     <div class="row">
-                                        <div class="col-12"> <input type="text" class="form-control form-control-lg bt-name" name="bt-name" id="colFormLabelLg" placeholder="Nom"></div>
+                                        <div class="col-12"> <input type="text" class="form-control form-control-lg bt-name" name="bt-name" placeholder="Nom"></div>
                                         <div class="col-12">
-                                            <input type="text" class="form-control form-control-lg" name="bt-subname" id="colFormLabelLg" placeholder="Prénom">
+                                            <input type="text" class="form-control form-control-lg" name="bt-subname" placeholder="Prénom">
                                         </div>
                                         <div class="col-12">
-                                            <input type="email" class="form-control form-control-lg" name="bt-email" id="colFormLabelLg" placeholder="Email">
+                                            <input type="email" class="form-control form-control-lg" name="bt-email" placeholder="Email">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-12"></div>
                                 <div class="col-sm-5 col-12 align-self-stretch formright">
                                     <div class="row">
-                                        <div class="col-12"> <input type="text" class="form-control form-control-lg" name="bt-subject" id="colFormLabelLg" placeholder="Sujet"></div>
+                                        <div class="col-12"> <input type="text" class="form-control form-control-lg" name="bt-subject" placeholder="Sujet"></div>
                                         <div class="col-12">
                                             <textarea class="form-control message-area" name="bt-message" placeholder="Message"></textarea>
                                         </div>
