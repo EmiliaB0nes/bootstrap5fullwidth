@@ -241,6 +241,15 @@ body {
 	}
 }
 
+.bt-page .titleseparationarea{
+	padding-top:4px;
+	padding-bottom:4px;
+}
+
+.bt-single .titleseparationarea{
+	padding-top:4px;
+	padding-bottom:4px;
+}
 
 .portfolioImg{
 	width: 100%;
@@ -313,7 +322,7 @@ body p {
 
 .titlearea h1 {
 	font-family: "Bebas Neue", cursive;
-	@include font-size (11rem);
+	@include font-size (9.5rem);
 	color: $color3;
 }
 
@@ -323,10 +332,10 @@ body p {
 
 @media (max-width: 991.5px) {
 	.titlearea h1 {
-		@include font-size (10rem);
+		@include font-size (8rem);
 	}
 	.titlearea p {
-		@include font-size (2.3rem);
+		@include font-size (2rem);
 	}
 }
 
@@ -366,9 +375,26 @@ body p {
 	@include font-size(1.9rem);
 }
 
+.textarea1 h2 {
+	font-family: "Source Sans Pro", sans-serif;
+	color: white;
+	font-weight: bold;
+	line-height: 2.5;
+	@include font-size(2.5rem);
+}
+
+.textarea1 h3 {
+	font-family: "Source Sans Pro", sans-serif;
+	color: white;
+	font-weight: bold;
+	line-height: 2;
+	@include font-size(2.2rem);
+}
+
 .textarea1 p {
 	font-family: "Source Sans Pro", sans-serif;
 	color: white;
+	line-height: 1.6;
 	@include font-size(1.9rem);
 }
 
