@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php wp_title('', true, ''); ?></title>
 
-    <link href="<?php bloginfo('template_url'); ?>/css/custom.min.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_url'); ?>/css/bootstrap5fullwidth.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha256-G72xkTLOzlEDwKKRngkyDtxmh6s4efw7sdKPDw+l1F8=" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
 

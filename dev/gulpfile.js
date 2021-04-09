@@ -10,15 +10,15 @@ sass.compiler = require('node-sass');
 
 
 gulp.task('sass-css-dev', function () {
-  return gulp.src('./scss/custom.scss')
+  return gulp.src('./scss/bootstrap5fullwidth.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
 });
 
 gulp.task('minify-css', () => {
-  return gulp.src('./css/custom.css')
+  return gulp.src('./css/bootstrap5fullwidth.css')
     .pipe(cleanCSS({ compatibility: 'ie10' }))
-    .pipe(rename("custom.min.css"))
+    .pipe(rename("bootstrap5fullwidth.min.css"))
     .pipe(gulp.dest('./prod/css/'));
 });
 
@@ -34,7 +34,7 @@ gulp.task("prod-sidebar-js", () => {
 
 
 gulp.task('prod-watch', function () {
-  gulp.watch('./scss/custom.scss', gulp.series('sass-css-dev', 'minify-css', 'prod-sidebar-js'));
+  gulp.watch('./scss/bootstrap5fullwidth.scss', gulp.series('sass-css-dev', 'minify-css', 'prod-sidebar-js'));
 });
 
 
@@ -42,9 +42,9 @@ gulp.task('prod-watch', function () {
 gulp.task('prod-dep', gulp.series('sass-css-dev', 'minify-css', 'prod-sidebar-js'));
 
 gulp.task('minify-css-prod', () => {
-  return gulp.src('./css/custom.css')
+  return gulp.src('./css/bootstrap5fullwidth.css')
     .pipe(cleanCSS({ compatibility: 'ie10' }))
-    .pipe(rename("custom.min.css"))
+    .pipe(rename("bootstrap5fullwidth.min.css"))
     .pipe(gulp.dest('./../css/'));
 });
 
