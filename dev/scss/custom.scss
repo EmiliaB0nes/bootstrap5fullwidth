@@ -1,15 +1,16 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 /*
-Theme Name: Unamed
-Theme URI: 
+Theme Name: bootstrap5fullwidth
+Theme URI: https://github.com/Ludestru/bootstrap5fullwidth
 Author: Luc Flemming
 Author URI: https://lflemming.space
-Description: Theme in developpement
-Tags: 
+Description: Theme using Bootstrap 5 and featuring a dynamic bullet area
+Tags: Theme using Bootstrap 5 and featuring a dynamic bullet area on the front page and on a dedicated page.
 Version: 0.1
-License: CC BY-SA 4.0
-License URI: https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1
+Bootstrap Version: 5.0.0-beta3
+License: GNU General Public License v3.0
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 */
 
 /***************************
@@ -25,7 +26,7 @@ $color3: #f4d58d;
 $color4: #eec190;
 $color5: #cc4e1f;
 
-/******************************************************************************
+/*******************************************************************************
   * Sidebar                                                                    *
   * Inspiré de : https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp *
   ******************************************************************************/
