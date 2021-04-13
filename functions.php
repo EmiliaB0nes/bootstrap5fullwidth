@@ -13,7 +13,8 @@ register_nav_menus(
 
 //Ajout De jQuery
 
-function load_jquery(){
+function load_jquery()
+{
     //Load scripts:
     wp_enqueue_script('jquery'); # Loading the WordPress bundled jQuery version.
     //may add more scripts to load like jquery-ui
@@ -87,3 +88,39 @@ add_action("admin_menu", "add_theme_menu_item");
 // }
 
 // add_action("init", "wpm_custom_post_type", 0);
+
+
+/**
+ * Add our Customizer content
+ */
+function panel($wp_customize)
+{
+
+    $wp_customize->add_panel('footer_panel', array(
+        'title' => 'Footer',
+        'description' => 'Editer ',
+        'priority' => 10,
+    ));
+
+
+    $wp_customize->add_section('section_footer', array(
+        'title' => 'Texte',
+        'priority' => 10,
+        'panel' => 'footer_panel',
+    ));
+
+
+    $wp_customize->add_setting('footer_copyright', array(
+        'default' => 'Copyright',
+        'transport' => 'refresh',
+    ));
+
+
+    $wp_customize->add_control('footer_ctrl', array(
+        'label' => 'Copyright / Texte de Pied de page',
+        'type' => 'text',
+        'section' => 'section_footer',
+        'settings' => 'footer_copyright',
+    ));
+}
+add_action('customize_register', 'panel');

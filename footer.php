@@ -1,6 +1,6 @@
 <footer class="container-fluid  titleseparationarea">
-    <?php if (get_option('footer_copyright')) : ?>
-        <p class="text-center"><?php echo get_option('footer_copyright'); ?></p>
+    <?php if (get_theme_mod('footer_copyright')) : ?>
+        <p class="text-center"><?php echo get_theme_mod('footer_copyright'); ?></p>
     <?php else : ?>
         <p class="text-center">&copy; <?php echo date("Y"); ?> - <?php bloginfo('name'); ?> &#40;<?php bloginfo('description'); ?>&#41;</p>
     <?php endif; ?>
