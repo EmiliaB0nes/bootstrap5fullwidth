@@ -25,13 +25,13 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid contentcolor1 textarea1 portfolioArea">
+            <div class="container-xxl contentcolor1 textarea1 portfolioArea">
                 <div class="row">
                     <div class="col-12">
                         <img class="portfolioImg" src="<?php echo the_post_thumbnail_url($mypost->ID); ?>">
-                        <div class="container-xxl">
+                        
                             <?php echo the_content(); ?>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
