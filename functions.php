@@ -96,31 +96,172 @@ add_action("admin_menu", "add_theme_menu_item");
 function panel($wp_customize)
 {
 
-    $wp_customize->add_panel('footer_panel', array(
-        'title' => 'Footer',
-        'description' => 'Editer ',
+    $wp_customize->add_panel('theme_options_panel', array(
+        'title' => 'Theme Options',
+        'description' => 'Settings for Bootstrap5FullWidth',
         'priority' => 10,
     ));
 
+    //Jumbotron
+
+    $wp_customize->add_section('section_jumbotron', array(
+        'title' => 'Jumbotron',
+        'priority' => 20,
+        'panel' => 'theme_options_panel',
+    ));
+
+    $wp_customize->add_setting('jumbotron_text_1', array(
+        'default' => 'Website Title',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('jumbotron_text_1', array(
+        'label' => 'Texte du titre principal',
+        'type' => 'text',
+        'section' => 'section_jumbotron',
+        'settings' => 'jumbotron_text_1',
+        'priority' => 10,
+    ));
+
+    $wp_customize->add_setting('jumbotron_text_1_enable', array(
+        'default' => 0,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('jumbotron_text_1_enable', array(
+        'label' => 'Enable',
+        'description' => esc_html__( 'Activer/Désactiver le titre principal personnalisé' ),
+        'type' => 'checkbox',
+        'section' => 'section_jumbotron',
+        'settings' => 'jumbotron_text_1_enable',
+        'priority' => 20,
+    ));
+
+    $wp_customize->add_setting('jumbotron_text_2', array(
+        'default' => 'Website Subtitle',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('jumbotron_text_2', array(
+        'label' => 'Texte du sous-titre',
+        'type' => 'text',
+        'section' => 'section_jumbotron',
+        'settings' => 'jumbotron_text_2',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('jumbotron_text_2_enable', array(
+        'default' => 0,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('jumbotron_text_2_enable', array(
+        'label' => 'Enable',
+        'description' => esc_html__( 'Activer/Désactiver le sous-titre personnalisé' ),
+        'type' => 'checkbox',
+        'section' => 'section_jumbotron',
+        'settings' => 'jumbotron_text_2_enable',
+        'priority' => 40,
+    ));
+
+
+    //Footer
 
     $wp_customize->add_section('section_footer', array(
-        'title' => 'Texte',
-        'priority' => 10,
-        'panel' => 'footer_panel',
+        'title' => 'Footer',
+        'priority' => 30,
+        'panel' => 'theme_options_panel',
     ));
-
 
     $wp_customize->add_setting('footer_copyright', array(
         'default' => 'Copyright',
         'transport' => 'refresh',
     ));
 
-
-    $wp_customize->add_control('footer_ctrl', array(
+    $wp_customize->add_control('footer_text', array(
         'label' => 'Copyright / Texte de Pied de page',
         'type' => 'text',
         'section' => 'section_footer',
         'settings' => 'footer_copyright',
+        'priority' => 10,
     ));
+
+    $wp_customize->add_setting('footer_enable', array(
+        'default' => 0,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('footer_enable', array(
+        'label' => 'Enable',
+        'description' => esc_html__( 'Activer/Désactiver le texte personnalisé de pied de page' ),
+        'type' => 'checkbox',
+        'section' => 'section_footer',
+        'settings' => 'footer_enable',
+        'priority' => 20,
+    ));
+
+    //Contact Modal
+    $wp_customize->add_section('section_contact_modal', array(
+        'title' => 'Contact Modal',
+        'priority' => 30,
+        'panel' => 'theme_options_panel',
+    ));
+
+    $wp_customize->add_setting('contact_modal_enable', array(
+        'default' => 1,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('contact_modal_enable', array(
+        'label' => 'Activer',
+        'description' => esc_html__( 'Activer/Désactiver le bouton de contact' ),
+        'type' => 'checkbox',
+        'section' => 'section_contact_modal',
+        'settings' => 'contact_modal_enable',
+        'priority' => 10,
+    ));
+
+    $wp_customize->add_setting('contact_modal_shortcode', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('contact_modal_shortcode', array(
+        'label' => 'Shortcode du formulaire Contact 7',
+        'description' => esc_html__( 'Veuillez utiliser le template fourni dans la documentation, sinon il ne fonctionnera pas' ),
+        'type' => 'text',
+        'section' => 'section_contact_modal',
+        'settings' => 'contact_modal_shortcode',
+        'priority' => 20,
+    ));
+
+    $wp_customize->add_setting('contact_modal_link_enable', array(
+        'default' => 0,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('contact_modal_link_enable', array(
+        'label' => 'Activer',
+        'description' => esc_html__( "Activer/Désactiver la possibilité d'utiliser un lien personnalisé (désactive le modal)" ),
+        'type' => 'checkbox',
+        'section' => 'section_contact_modal',
+        'settings' => 'contact_modal_link_enable',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('contact_modal_link', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('contact_modal_link', array(
+        'label' => 'Lien personnalisé du bouton Contact',
+        'type' => 'text',
+        'section' => 'section_contact_modal',
+        'settings' => 'contact_modal_link',
+        'priority' => 40,
+    ));
+    
+
 }
 add_action('customize_register', 'panel');

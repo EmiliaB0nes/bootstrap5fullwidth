@@ -36,10 +36,27 @@
                     <button class="openbtn navbar-toggler" onclick="openNav()"><span class="navbar-toggler-icon"></span>
                         Menu</button>
                 </div>
-                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Contact</button>
+                <?php if (get_theme_mod('contact_modal_enable')) {
+                    if (get_theme_mod('contact_modal_link_enable')) {
+                ?>
+                        <a href="<?php if (get_theme_mod('contact_modal_link')) : ?>
+                        <?php echo get_theme_mod('contact_modal_link'); ?>
+                            <?php else : ?>
+                                https://google.com
+                        <?php endif; ?>">
+                            <button type="button" class="btn btn-primary btn-lg">Contact</button>
+                        </a>
+                    <?php   } else {
+                    ?>
+                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#ModalFullscreen">Contact</button>
+
+                <?php           }
+                } ?>
             </div>
         </nav>
     </header>
-    <?php 
+    <?php
     //Ajout du modal de contact
-    include get_template_directory() . '/components/contactForm.php'; ?>
+    if (get_theme_mod('contact_modal_enable')) {
+        include get_template_directory() . '/components/contactForm.php';
+    } ?>

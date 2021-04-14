@@ -5,14 +5,25 @@
     <div class="container-xxl contentcolor1 titlearea">
         <div class="row">
             <div class="col-12 ">
-                <h1 class="text-center"><?php if (get_field('nom')) : ?>
-                        <?php the_field('nom'); ?>
-                    <?php endif; ?></h1>
+                <h1 class="text-center">
+                    <?php if (get_theme_mod('jumbotron_text_1_enable')) : ?>
+                        <?php echo get_theme_mod('jumbotron_text_1'); ?>
+                    <?php else : ?>
+                        <?php if (get_field('nom')) : ?>
+                            <?php the_field('nom'); ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                </h1>
             </div>
             <div class="col-12">
-                <p class="text-center"><?php if (get_field('sous-titre')) : ?>
-                        <?php the_field('sous-titre'); ?>
-                    <?php endif; ?></p>
+                <p class="text-center"><?php if (get_theme_mod('jumbotron_text_2_enable')) : ?>
+                        <?php echo get_theme_mod('jumbotron_text_2'); ?>
+                    <?php else : ?>
+                        <?php if (get_field('sous-titre')) : ?>
+                            <?php the_field('sous-titre'); ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
             </div>
         </div>
     </div>
