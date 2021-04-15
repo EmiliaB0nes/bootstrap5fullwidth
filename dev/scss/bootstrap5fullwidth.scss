@@ -20,11 +20,13 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
-$color1: #292320;
-$color2: #487b89;
-$color3: #f4d58d;
-$color4: #eec190;
-$color5: #cc4e1f;
+:root{
+	--color1: #292320;
+	--color2: #487b89;
+	--color3: #f4d58d;
+	--color4: #eec190;
+	--color5: #cc4e1f;
+}
 
 /*******************************************************************************
   * Sidebar                                                                    *
@@ -42,7 +44,7 @@ $color5: #cc4e1f;
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: $color1;
+	background-color: var(--color1);
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -105,7 +107,7 @@ body {
 	/*Correction pour fixer le menu en top */
 	padding-top: 90px;
 	/*Couleur par défaut du site pour enlever l'espace blanc avant le fixed footer*/
-	background-color: #292320;
+	background-color: var(--color1);
 	/*Remplire la page sans pour autant fixer le footer*/
 	/* Inspiré de : https://medium.com/@mschenk22/bootstrap-4-footer-at-bottom-not-sticky-dynamic-footer-height-b37ccec837e2 */
 	min-height: 100vh;
@@ -291,7 +293,7 @@ body p {
 }
 
 .bg-dark {
-	background-color: $color1 !important;
+	background-color: var(--color1) !important;
 }
 
 .navbar .menu {
@@ -304,12 +306,12 @@ body p {
 }
 
 .btn-primary {
-	background-color: $color5;
-	border-color: $color5;
+	background-color: var(--color5);
+	border-color: var(--color5);
 }
 
 .modal-content {
-	background-color: $color4;
+	background-color: var(--color4);
 }
 
 .modaltitle{
@@ -322,7 +324,7 @@ body p {
 .titlearea h1 {
 	font-family: "Bebas Neue", cursive;
 	@include font-size (9.5rem);
-	color: $color3;
+	color: var(--color3);
 }
 
 .titlearea p {
@@ -339,12 +341,12 @@ body p {
 }
 
 .contentcolor1 {
-	background-color: $color1;
+	background-color: var(--color1);
 	color: white;
 }
 
 .titleseparationarea {
-	background-color: $color2;
+	background-color: var(--color2);
 	color: white;
 }
 
@@ -352,12 +354,12 @@ body p {
 	font-family: "Bebas Neue", cursive;
 	@include font-size (3rem);
 	font-weight: bold;
-	color: $color3;
+	color: var(--color3);
 	align-content: center !important;
 }
 
 .rounded-circle {
-	background-color: $color3;
+	background-color: var(--color3);
 	height: 210px;
 	width: 210px;
 	display: inline-block;

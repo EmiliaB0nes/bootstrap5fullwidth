@@ -97,15 +97,88 @@ function panel($wp_customize)
 {
 
     $wp_customize->add_panel('theme_options_panel', array(
-        'title' => 'Theme Options',
+        'title' => esc_html__('Theme Options'),
         'description' => 'Settings for Bootstrap5FullWidth',
         'priority' => 10,
+    ));
+
+    //Colors
+
+    $wp_customize->add_section('section_color', array(
+        'title' => esc_html__('Couleurs'),
+        'priority' => 10,
+        'panel' => 'theme_options_panel',
+    ));
+
+    $wp_customize->add_setting('theme_color_1', array(
+        'default' => '#292320',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control('theme_color_1', array(
+        'label' => esc_html__('Couleur 1'),
+        'section' => 'section_color',
+        'priority' => 10,
+        'type' => 'color',
+    ));
+
+    $wp_customize->add_setting('theme_color_2', array(
+        'default' => '#487b89',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control('theme_color_2', array(
+        'label' => esc_html__('Couleur 2'),
+        'section' => 'section_color',
+        'priority' => 10,
+        'type' => 'color',
+    ));
+
+    $wp_customize->add_setting('theme_color_3', array(
+        'default' => '#f4d58d',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control('theme_color_3', array(
+        'label' => esc_html__('Couleur 3'),
+        'section' => 'section_color',
+        'priority' => 10,
+        'type' => 'color',
+    ));
+
+    $wp_customize->add_setting('theme_color_4', array(
+        'default' => '#eec190',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control('theme_color_4', array(
+        'label' => esc_html__('Couleur 4'),
+        'section' => 'section_color',
+        'priority' => 10,
+        'type' => 'color',
+    ));
+
+    $wp_customize->add_setting('theme_color_5', array(
+        'default' => '#cc4e1f',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control('theme_color_5', array(
+        'label' => esc_html__('Couleur 5'),
+        'section' => 'section_color',
+        'priority' => 10,
+        'type' => 'color',
     ));
 
     //Jumbotron
 
     $wp_customize->add_section('section_jumbotron', array(
-        'title' => 'Jumbotron',
+        'title' => esc_html__('Jumbotron'),
         'priority' => 20,
         'panel' => 'theme_options_panel',
     ));
@@ -113,10 +186,11 @@ function panel($wp_customize)
     $wp_customize->add_setting('jumbotron_text_1', array(
         'default' => 'Website Title',
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control('jumbotron_text_1', array(
-        'label' => 'Texte du titre principal',
+        'label' => esc_html__('Texte du titre principal'),
         'type' => 'text',
         'section' => 'section_jumbotron',
         'settings' => 'jumbotron_text_1',
@@ -126,11 +200,12 @@ function panel($wp_customize)
     $wp_customize->add_setting('jumbotron_text_1_enable', array(
         'default' => 0,
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control('jumbotron_text_1_enable', array(
-        'label' => 'Enable',
-        'description' => esc_html__( 'Activer/Désactiver le titre principal personnalisé' ),
+        'label' => esc_html__('Enable'),
+        'description' => esc_html__('Activer/Désactiver le titre principal personnalisé'),
         'type' => 'checkbox',
         'section' => 'section_jumbotron',
         'settings' => 'jumbotron_text_1_enable',
@@ -140,10 +215,11 @@ function panel($wp_customize)
     $wp_customize->add_setting('jumbotron_text_2', array(
         'default' => 'Website Subtitle',
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control('jumbotron_text_2', array(
-        'label' => 'Texte du sous-titre',
+        'label' => esc_html__('Texte du sous-titre'),
         'type' => 'text',
         'section' => 'section_jumbotron',
         'settings' => 'jumbotron_text_2',
@@ -153,11 +229,12 @@ function panel($wp_customize)
     $wp_customize->add_setting('jumbotron_text_2_enable', array(
         'default' => 0,
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control('jumbotron_text_2_enable', array(
-        'label' => 'Enable',
-        'description' => esc_html__( 'Activer/Désactiver le sous-titre personnalisé' ),
+        'label' => esc_html__('Enable'),
+        'description' => esc_html__('Activer/Désactiver le sous-titre personnalisé'),
         'type' => 'checkbox',
         'section' => 'section_jumbotron',
         'settings' => 'jumbotron_text_2_enable',
@@ -168,7 +245,7 @@ function panel($wp_customize)
     //Footer
 
     $wp_customize->add_section('section_footer', array(
-        'title' => 'Footer',
+        'title' => esc_html__('Footer'),
         'priority' => 30,
         'panel' => 'theme_options_panel',
     ));
@@ -176,10 +253,11 @@ function panel($wp_customize)
     $wp_customize->add_setting('footer_copyright', array(
         'default' => 'Copyright',
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control('footer_text', array(
-        'label' => 'Copyright / Texte de Pied de page',
+        'label' => esc_html__('Copyright / Texte de Pied de page'),
         'type' => 'text',
         'section' => 'section_footer',
         'settings' => 'footer_copyright',
@@ -189,11 +267,12 @@ function panel($wp_customize)
     $wp_customize->add_setting('footer_enable', array(
         'default' => 0,
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control('footer_enable', array(
-        'label' => 'Enable',
-        'description' => esc_html__( 'Activer/Désactiver le texte personnalisé de pied de page' ),
+        'label' => esc_html__('Enable'),
+        'description' => esc_html__('Activer/Désactiver le texte personnalisé de pied de page'),
         'type' => 'checkbox',
         'section' => 'section_footer',
         'settings' => 'footer_enable',
@@ -202,7 +281,7 @@ function panel($wp_customize)
 
     //Contact Modal
     $wp_customize->add_section('section_contact_modal', array(
-        'title' => 'Contact Modal',
+        'title' => esc_html__('Contact Modal'),
         'priority' => 30,
         'panel' => 'theme_options_panel',
     ));
@@ -210,11 +289,12 @@ function panel($wp_customize)
     $wp_customize->add_setting('contact_modal_enable', array(
         'default' => 1,
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control('contact_modal_enable', array(
-        'label' => 'Activer',
-        'description' => esc_html__( 'Activer/Désactiver le bouton de contact' ),
+        'label' => esc_html__('Activer'),
+        'description' => esc_html__('Activer/Désactiver le bouton de contact'),
         'type' => 'checkbox',
         'section' => 'section_contact_modal',
         'settings' => 'contact_modal_enable',
@@ -224,11 +304,12 @@ function panel($wp_customize)
     $wp_customize->add_setting('contact_modal_shortcode', array(
         'default' => '',
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control('contact_modal_shortcode', array(
-        'label' => 'Shortcode du formulaire Contact 7',
-        'description' => esc_html__( 'Veuillez utiliser le template fourni dans la documentation, sinon il ne fonctionnera pas' ),
+        'label' => esc_html__('Shortcode du formulaire Contact 7'),
+        'description' => esc_html__('Veuillez utiliser le template fourni dans la documentation, sinon il ne fonctionnera pas'),
         'type' => 'text',
         'section' => 'section_contact_modal',
         'settings' => 'contact_modal_shortcode',
@@ -238,11 +319,12 @@ function panel($wp_customize)
     $wp_customize->add_setting('contact_modal_link_enable', array(
         'default' => 0,
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control('contact_modal_link_enable', array(
-        'label' => 'Activer',
-        'description' => esc_html__( "Activer/Désactiver la possibilité d'utiliser un lien personnalisé (désactive le modal)" ),
+        'label' => esc_html__('Activer'),
+        'description' => esc_html__("Activer/Désactiver la possibilité d'utiliser un lien personnalisé (désactive le modal)"),
         'type' => 'checkbox',
         'section' => 'section_contact_modal',
         'settings' => 'contact_modal_link_enable',
@@ -252,16 +334,39 @@ function panel($wp_customize)
     $wp_customize->add_setting('contact_modal_link', array(
         'default' => '',
         'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
     ));
 
     $wp_customize->add_control('contact_modal_link', array(
-        'label' => 'Lien personnalisé du bouton Contact',
+        'label' => esc_html__('Lien personnalisé du bouton Contact'),
         'type' => 'text',
         'section' => 'section_contact_modal',
         'settings' => 'contact_modal_link',
         'priority' => 40,
     ));
-    
-
 }
 add_action('customize_register', 'panel');
+
+//Activer le Custom CSS pour les couleurs
+function custom_css_color_output()
+{
+    echo '<style type="text/css"> :root{';
+    if (get_theme_mod('theme_color_1')) {
+        echo '--color1: ' . get_theme_mod('theme_color_1') . '; ';
+    }
+    if (get_theme_mod('theme_color_2')) {
+        echo '--color2: ' . get_theme_mod('theme_color_2') . '; ';
+    }
+    if (get_theme_mod('theme_color_3')) {
+        echo '--color3: ' . get_theme_mod('theme_color_3') . '; ';
+    }
+    if (get_theme_mod('theme_color_4')) {
+        echo '--color4: ' . get_theme_mod('theme_color_4') . '; ';
+    }
+    if (get_theme_mod('theme_color_5')) {
+        echo '--color5: ' . get_theme_mod('theme_color_5') . '; ';
+    }
+    echo '}</style>';
+}
+
+add_action('wp_head', 'custom_css_color_output');

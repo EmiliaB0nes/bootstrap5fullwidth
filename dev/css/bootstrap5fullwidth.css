@@ -7499,6 +7499,13 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 /***************************
  * Importation des polices *
  ***************************/
+:root {
+  --color1: #292320;
+  --color2: #487b89;
+  --color3: #f4d58d;
+  --color4: #eec190;
+  --color5: #cc4e1f; }
+
 /*******************************************************************************
   * Sidebar                                                                    *
   * Inspiré de : https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp *
@@ -7513,7 +7520,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #292320;
+  background-color: var(--color1);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px; }
@@ -7564,7 +7571,7 @@ body {
   /*Correction pour fixer le menu en top */
   padding-top: 90px;
   /*Couleur par défaut du site pour enlever l'espace blanc avant le fixed footer*/
-  background-color: #292320;
+  background-color: var(--color1);
   /*Remplire la page sans pour autant fixer le footer*/
   /* Inspiré de : https://medium.com/@mschenk22/bootstrap-4-footer-at-bottom-not-sticky-dynamic-footer-height-b37ccec837e2 */
   min-height: 100vh;
@@ -7754,7 +7761,7 @@ body p {
   color: white; }
 
 .bg-dark {
-  background-color: #292320 !important; }
+  background-color: var(--color1) !important; }
 
 .navbar .menu {
   font-size: 1.3rem; }
@@ -7764,11 +7771,11 @@ body p {
   font-size: 1.3rem; }
 
 .btn-primary {
-  background-color: #cc4e1f;
-  border-color: #cc4e1f; }
+  background-color: var(--color5);
+  border-color: var(--color5); }
 
 .modal-content {
-  background-color: #eec190; }
+  background-color: var(--color4); }
 
 .modaltitle {
   font-family: "Source Sans Pro", sans-serif;
@@ -7779,7 +7786,7 @@ body p {
 .titlearea h1, .titlearea .h1 {
   font-family: "Bebas Neue", cursive;
   font-size: calc(2.075rem + 9.9vw);
-  color: #f4d58d; }
+  color: var(--color3); }
   @media (min-width: 1200px) {
     .titlearea h1, .titlearea .h1 {
       font-size: 9.5rem; } }
@@ -7805,25 +7812,25 @@ body p {
       font-size: 2rem; } }
 
 .contentcolor1 {
-  background-color: #292320;
+  background-color: var(--color1);
   color: white; }
 
 .titleseparationarea {
-  background-color: #487b89;
+  background-color: var(--color2);
   color: white; }
 
 .titleseparationarea h2, .titleseparationarea .h2 {
   font-family: "Bebas Neue", cursive;
   font-size: calc(1.425rem + 2.1vw);
   font-weight: bold;
-  color: #f4d58d;
+  color: var(--color3);
   align-content: center !important; }
   @media (min-width: 1200px) {
     .titleseparationarea h2, .titleseparationarea .h2 {
       font-size: 3rem; } }
 
 .rounded-circle {
-  background-color: #f4d58d;
+  background-color: var(--color3);
   height: 210px;
   width: 210px;
   display: inline-block;
