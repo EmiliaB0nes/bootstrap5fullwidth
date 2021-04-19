@@ -101,6 +101,48 @@ function panel($wp_customize)
         'priority' => 10,
     ));
 
+    //Colors Theme
+
+    $wp_customize->add_section('section_color_theme', array(
+        'title' => esc_html__('Themes'),
+        'priority' => 9,
+        'panel' => 'theme_options_panel',
+    ));
+
+    $wp_customize->add_setting('theme_color_theme_preset', array(
+        'default' => 'c_theme_default',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('theme_color_preset', array(
+        'label' => esc_html__('Theme'),
+        'section' => 'section_color_theme',
+        'priority' => 8,
+        'type' => 'select',
+        'settings' => 'theme_color_theme_preset',
+        'choices' => array(
+            'c_theme_default' => __('Default Theme'),
+            'c_theme_fall' => __('Fall'),
+            'c_theme_2' => __('Theme 2'),
+        )
+    ));
+
+    $wp_customize->add_setting('theme_color_preset_enable', array(
+        'default' => 0,
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('theme_color_preset_enable', array(
+        'label' => esc_html__('Appliquer le Theme'),
+        'description' => esc_html__('Activer cette option pour appliquer un theme. Il est ensuite recommandé de recharger complétement la page pour voir les modifications. Changer de theme remplacera les parametres de couleurs personnalisées'),
+        'type' => 'checkbox',
+        'section' => 'section_color_theme',
+        'settings' => 'theme_color_preset_enable',
+        'priority' => 9,
+    ));
+
     //Colors
 
     $wp_customize->add_section('section_color', array(
@@ -393,15 +435,53 @@ function panel($wp_customize)
         'settings' => 'contact_modal_link',
         'priority' => 40,
     ));
+
+    //set_theme_mod('theme_color_preset_enable', false);
 }
 
 add_action('customize_register', 'panel');
 
 //
-//Activer le Custom CSS pour les couleurs
+//Activer le Custom CSS pour les couleurs (Fonctionne partiellement)
 //
+
+function custom_color_theme($custom_theme)
+{
+    switch ($custom_theme) {
+        case "c_theme_default":
+            set_theme_mod('theme_color_1', '#292320');
+            set_theme_mod('theme_color_2', '#487b89');
+            set_theme_mod('theme_color_3', '#f4d58d');
+            set_theme_mod('theme_color_4', '#eec190');
+            set_theme_mod('theme_color_5', '#cc4e1f');
+            break;
+        case "c_theme_fall":
+            set_theme_mod('theme_color_1', '#5e4650');
+            set_theme_mod('theme_color_2', '#cf5f57');
+            set_theme_mod('theme_color_3', '#efc192');
+            set_theme_mod('theme_color_4', '#eec190');
+            set_theme_mod('theme_color_5', '#cc4e1f');
+            break;
+        case "c_theme_2":
+            set_theme_mod('theme_color_1', '#463f42');
+            set_theme_mod('theme_color_2', '#444443');
+            set_theme_mod('theme_color_3', '#de7b5c');
+            set_theme_mod('theme_color_4', '#f0c28e');
+            set_theme_mod('theme_color_5', '#8ed8bb');
+            break;
+    }
+}
+
 function custom_css_color_output()
 {
+
+
+    if ((get_theme_mod('theme_color_preset_enable') == true) && get_theme_mod('theme_color_preset')) {
+        custom_color_theme(get_theme_mod('theme_color_theme_preset'));
+        //Ne fonctionne pas correctement au niveau de l'affichage, nécessite 2 rechargements pour être appliqué       
+        set_theme_mod('theme_color_preset_enable', false);
+    }
+
     echo '<style type="text/css"> :root{';
     if (get_theme_mod('theme_color_1')) {
         echo '--color1: ' . get_theme_mod('theme_color_1') . '; ';
@@ -420,6 +500,10 @@ function custom_css_color_output()
     }
     echo '}</style>';
 }
+
+//if (get_theme_mod('theme_color_preset_enable') == true) {
+//    set_theme_mod('theme_color_preset_enable', false);
+//}
 
 add_action('wp_head', 'custom_css_color_output');
 
@@ -495,7 +579,6 @@ function font_parser($theme_mod_font)
         "fontName" => $fontName,
         "fontURL" => $fontURL
     );
-
 }
 
 
