@@ -26,6 +26,9 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 	--color3: #f4d58d;
 	--color4: #eec190;
 	--color5: #cc4e1f;
+
+	--font1: "Source Sans Pro", sans-serif;
+	--font2: "Bebas Neue", cursive;
 }
 
 /*******************************************************************************
@@ -55,7 +58,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 }
 
 .sidebar a {
-	font-family: "Bebas Neue", cursive;
+	font-family: var(--font2);
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 25px;
@@ -281,7 +284,7 @@ footer p {
  ****************/
 
 body p {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: var(--font1);
 }
 
 .navbar {
@@ -301,7 +304,7 @@ body p {
 }
 
 .navbar .btn {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: var(--font1);
 	font-size: 1.3rem;
 }
 
@@ -315,14 +318,14 @@ body p {
 }
 
 .modaltitle{
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: var(--font1);
 	font-weight: bold;
 	margin-top: 4%;
 	font-size: 4rem;
 }
 
 .titlearea h1 {
-	font-family: "Bebas Neue", cursive;
+	font-family: var(--font2);
 	@include font-size (9.5rem);
 	color: var(--color3);
 }
@@ -351,7 +354,7 @@ body p {
 }
 
 .titleseparationarea h2 {
-	font-family: "Bebas Neue", cursive;
+	font-family: var(--font2);
 	@include font-size (3rem);
 	font-weight: bold;
 	color: var(--color3);
@@ -371,13 +374,13 @@ body p {
 }
 
 .bulletarea p {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: var(--font1);
 	color: white;
 	@include font-size(1.9rem);
 }
 
 .textarea1 h2 {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: var(--font1);
 	color: white;
 	font-weight: bold;
 	line-height: 2.5;
@@ -385,7 +388,7 @@ body p {
 }
 
 .textarea1 h3 {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: var(--font1);
 	color: white;
 	font-weight: bold;
 	line-height: 2;
@@ -393,14 +396,14 @@ body p {
 }
 
 .textarea1 p {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: var(--font1);
 	color: white;
 	line-height: 1.6;
 	@include font-size(1.9rem);
 }
 
 footer p {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: var(--font1);
 	color: white;
 	@include font-size(1.8rem);
 }

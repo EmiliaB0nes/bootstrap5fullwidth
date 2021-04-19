@@ -17,7 +17,6 @@ function load_jquery()
 {
     //Load scripts:
     wp_enqueue_script('jquery'); # Loading the WordPress bundled jQuery version.
-    //may add more scripts to load like jquery-ui
 }
 add_action('wp_enqueue_scripts', 'load_jquery');
 
@@ -175,8 +174,59 @@ function panel($wp_customize)
         'type' => 'color',
     ));
 
-    //Jumbotron
 
+    //Fonts
+
+    //Simple liste de fonts
+    $fontList = array(
+        'bebas_neue' => __('Bebas Neue'),
+        'source_sans_pro' => __('Source Sans Pro'),
+        'roboto' => __('Roboto'),
+        'antonio' => __('Antonio'),
+        'zen_dots' => __('Zen Dots'),
+        'open_sans' => __('Open Sans'),
+        'karantina' => __('Karantina'),
+        'noto_sans_jp' => __('Noto Sans JP'),
+        'lato' => __('Lato'),
+        'montserrat' => __('Montserrat')
+    );
+
+    $wp_customize->add_section('section_font', array(
+        'title' => esc_html__('Polices'),
+        'priority' => 11,
+        'panel' => 'theme_options_panel',
+    ));
+
+    $wp_customize->add_setting('theme_font_1', array(
+        'default' => 'bebas_neue',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('theme_font_1', array(
+        'label' => esc_html__('Police primaire'),
+        'section' => 'section_font',
+        'priority' => 11,
+        'type' => 'select',
+        'choices' => $fontList
+    ));
+
+    $wp_customize->add_setting('theme_font_2', array(
+        'default' => 'source_sans_pro',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('theme_font_2', array(
+        'label' => esc_html__('Police secondaire'),
+        'section' => 'section_font',
+        'priority' => 10,
+        'type' => 'select',
+        'choices' => $fontList
+    ));
+
+
+    //Jumbotron
     $wp_customize->add_section('section_jumbotron', array(
         'title' => esc_html__('Jumbotron'),
         'priority' => 20,
@@ -243,7 +293,6 @@ function panel($wp_customize)
 
 
     //Footer
-
     $wp_customize->add_section('section_footer', array(
         'title' => esc_html__('Footer'),
         'priority' => 30,
@@ -345,9 +394,12 @@ function panel($wp_customize)
         'priority' => 40,
     ));
 }
+
 add_action('customize_register', 'panel');
 
+//
 //Activer le Custom CSS pour les couleurs
+//
 function custom_css_color_output()
 {
     echo '<style type="text/css"> :root{';
@@ -370,3 +422,81 @@ function custom_css_color_output()
 }
 
 add_action('wp_head', 'custom_css_color_output');
+
+
+//
+//Activer le Custom CSS pour les fonts
+//
+function custom_css_font_output()
+{
+    echo '<style type="text/css"> ';
+    if (get_theme_mod('theme_font_1')) {
+        echo '@import url("' . font_parser(get_theme_mod('theme_font_1'))['fontURL'] . '"); ';
+    }
+    if (get_theme_mod('theme_font_2')) {
+        echo '@import url("' . font_parser(get_theme_mod('theme_font_2'))['fontURL'] . '"); ';
+    }
+    echo ':root{';
+    if (get_theme_mod('theme_font_1')) {
+        echo '--font1: ' . font_parser(get_theme_mod('theme_font_1'))['fontName'] . '; ';
+    }
+    if (get_theme_mod('theme_font_2')) {
+        echo '--font2: ' . font_parser(get_theme_mod('theme_font_2'))['fontName'] . '; ';
+    }
+    echo '}</style>';
+}
+
+function font_parser($theme_mod_font)
+{
+    switch ($theme_mod_font) {
+        case "bebas_neue":
+            $fontName = "'Bebas Neue', cursive ";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap";
+            break;
+        case "source_sans_pro":
+            $fontName = "'Source Sans Pro', sans-serif";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap";
+            break;
+        case "roboto":
+            $fontName = "'Roboto', sans-serif";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
+            break;
+        case "antonio":
+            $fontName = "'Antonio', sans-serif";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Antonio&display=swap";
+            break;
+        case "zen_dots":
+            $fontName = "'Zen Dots', cursive";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap";
+            break;
+        case "open_sans":
+            $fontName = "'Open Sans', sans-serif";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap";
+            break;
+        case "karantina":
+            $fontName = "'Karantina', cursive";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Karantina&display=swap";
+            break;
+        case "noto_sans_jp":
+            $fontName = "'Noto Sans JP', sans-serif";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap";
+            break;
+        case "lato":
+            $fontName = "'Lato', sans-serif";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Lato&display=swap";
+            break;
+        case "montserrat":
+            $fontName = "'Montserrat', sans-serif";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Montserrat&display=swap";
+            break;
+    }
+
+    return array(
+        "fontName" => $fontName,
+        "fontURL" => $fontURL
+    );
+
+}
+
+
+add_action('wp_head', 'custom_css_font_output');

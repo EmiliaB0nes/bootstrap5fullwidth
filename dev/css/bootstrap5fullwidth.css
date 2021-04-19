@@ -7504,7 +7504,9 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
   --color2: #487b89;
   --color3: #f4d58d;
   --color4: #eec190;
-  --color5: #cc4e1f; }
+  --color5: #cc4e1f;
+  --font1: "Source Sans Pro", sans-serif;
+  --font2: "Bebas Neue", cursive; }
 
 /*******************************************************************************
   * Sidebar                                                                    *
@@ -7529,7 +7531,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
   list-style-type: none; }
 
 .sidebar a {
-  font-family: "Bebas Neue", cursive;
+  font-family: var(--font2);
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -7752,7 +7754,7 @@ footer p {
  * Mise en page *
  ****************/
 body p {
-  font-family: "Source Sans Pro", sans-serif; }
+  font-family: var(--font1); }
 
 .navbar {
   padding-top: 0px; }
@@ -7767,7 +7769,7 @@ body p {
   font-size: 1.3rem; }
 
 .navbar .btn {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: var(--font1);
   font-size: 1.3rem; }
 
 .btn-primary {
@@ -7778,13 +7780,13 @@ body p {
   background-color: var(--color4); }
 
 .modaltitle {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: var(--font1);
   font-weight: bold;
   margin-top: 4%;
   font-size: 4rem; }
 
 .titlearea h1, .titlearea .h1 {
-  font-family: "Bebas Neue", cursive;
+  font-family: var(--font2);
   font-size: calc(2.075rem + 9.9vw);
   color: var(--color3); }
   @media (min-width: 1200px) {
@@ -7820,7 +7822,7 @@ body p {
   color: white; }
 
 .titleseparationarea h2, .titleseparationarea .h2 {
-  font-family: "Bebas Neue", cursive;
+  font-family: var(--font2);
   font-size: calc(1.425rem + 2.1vw);
   font-weight: bold;
   color: var(--color3);
@@ -7840,7 +7842,7 @@ body p {
   transform: scale(0.6); }
 
 .bulletarea p {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: var(--font1);
   color: white;
   font-size: calc(1.315rem + 0.78vw); }
   @media (min-width: 1200px) {
@@ -7848,7 +7850,7 @@ body p {
       font-size: 1.9rem; } }
 
 .textarea1 h2, .textarea1 .h2 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: var(--font1);
   color: white;
   font-weight: bold;
   line-height: 2.5;
@@ -7858,7 +7860,7 @@ body p {
       font-size: 2.5rem; } }
 
 .textarea1 h3, .textarea1 .h3 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: var(--font1);
   color: white;
   font-weight: bold;
   line-height: 2;
@@ -7868,7 +7870,7 @@ body p {
       font-size: 2.2rem; } }
 
 .textarea1 p {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: var(--font1);
   color: white;
   line-height: 1.6;
   font-size: calc(1.315rem + 0.78vw); }
@@ -7877,7 +7879,7 @@ body p {
       font-size: 1.9rem; } }
 
 footer p {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: var(--font1);
   color: white;
   font-size: calc(1.305rem + 0.66vw); }
   @media (min-width: 1200px) {
