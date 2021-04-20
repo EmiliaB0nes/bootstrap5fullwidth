@@ -101,8 +101,8 @@ function panel($wp_customize)
         'priority' => 10,
     ));
 
-    //Colors Theme
 
+    //Colors/Font Theme
     $wp_customize->add_section('section_color_theme', array(
         'title' => esc_html__('Themes'),
         'priority' => 9,
@@ -116,7 +116,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_preset', array(
-        'label' => esc_html__('Theme'),
+        'label' => esc_html__('Theme de couleurs'),
         'section' => 'section_color_theme',
         'priority' => 8,
         'type' => 'select',
@@ -124,7 +124,10 @@ function panel($wp_customize)
         'choices' => array(
             'c_theme_default' => __('Default Theme'),
             'c_theme_fall' => __('Fall'),
-            'c_theme_2' => __('Theme 2'),
+            'c_theme_blue' => __('Blue'),
+            'c_theme_green' => __('Green'),
+            'c_theme_grey' => __('Grey'),
+            'c_theme_darkGreen' => __('Dark Green'),
         )
     ));
 
@@ -135,7 +138,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_preset_enable', array(
-        'label' => esc_html__('Appliquer le Theme'),
+        'label' => esc_html__('Appliquer les Couleurs'),
         'description' => esc_html__('Activer cette option pour appliquer un theme. Il est ensuite recommandé de recharger complétement la page pour voir les modifications. Changer de theme remplacera les parametres de couleurs personnalisées'),
         'type' => 'checkbox',
         'section' => 'section_color_theme',
@@ -143,8 +146,45 @@ function panel($wp_customize)
         'priority' => 9,
     ));
 
-    //Colors
+    $wp_customize->add_setting('theme_font_theme_preset', array(
+        'default' => 'c_theme_fonts_source-bebas',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
 
+    $wp_customize->add_control('theme_font_preset', array(
+        'label' => esc_html__('Theme de polices'),
+        'section' => 'section_color_theme',
+        'priority' => 15,
+        'type' => 'select',
+        'settings' => 'theme_font_theme_preset',
+        'choices' => array(
+            'c_theme_fonts_source-bebas' => __('Default Theme'),
+            'c_theme_fonts_openSans-roboto' => __('Open Sans - Roboto'),
+            'c_theme_fonts_antonio-anton' => __('Antonio - Anton'),
+            'c_theme_fonts_zenDots-roboto' => __('Zen Dots - Roboto'),
+            'c_theme_fonts_notoSansJp-roboto' => __('Noto Sans JP - Roboto'),
+            'c_theme_fonts_lato-roboto' => __('Lato - Roboto'),
+        )
+    ));
+
+    $wp_customize->add_setting('theme_font_preset_enable', array(
+        'default' => 0,
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('theme_font_preset_enable', array(
+        'label' => esc_html__('Appliquer les Polices'),
+        'description' => esc_html__('Activer cette option pour appliquer un theme. Il est ensuite recommandé de recharger complétement la page pour voir les modifications. Changer de theme remplacera les anciens parametres.'),
+        'type' => 'checkbox',
+        'section' => 'section_color_theme',
+        'settings' => 'theme_font_preset_enable',
+        'priority' => 20,
+    ));
+
+
+    //Colors
     $wp_customize->add_section('section_color', array(
         'title' => esc_html__('Couleurs'),
         'priority' => 10,
@@ -230,7 +270,8 @@ function panel($wp_customize)
         'karantina' => __('Karantina'),
         'noto_sans_jp' => __('Noto Sans JP'),
         'lato' => __('Lato'),
-        'montserrat' => __('Montserrat')
+        'montserrat' => __('Montserrat'),
+        'anton' => __('Anton'),
     );
 
     $wp_customize->add_section('section_font', array(
@@ -248,7 +289,7 @@ function panel($wp_customize)
     $wp_customize->add_control('theme_font_1', array(
         'label' => esc_html__('Police primaire'),
         'section' => 'section_font',
-        'priority' => 11,
+        'priority' => 10,
         'type' => 'select',
         'choices' => $fontList
     ));
@@ -462,19 +503,39 @@ function custom_color_theme($custom_theme)
             set_theme_mod('theme_color_4', '#eec190');
             set_theme_mod('theme_color_5', '#cc4e1f');
             break;
-        case "c_theme_2":
-            set_theme_mod('theme_color_1', '#463f42');
-            set_theme_mod('theme_color_2', '#444443');
-            set_theme_mod('theme_color_3', '#de7b5c');
-            set_theme_mod('theme_color_4', '#f0c28e');
-            set_theme_mod('theme_color_5', '#8ed8bb');
+        case "c_theme_blue":
+            set_theme_mod('theme_color_1', '#20232f');
+            set_theme_mod('theme_color_2', '#58878d');
+            set_theme_mod('theme_color_3', '#c4a596');
+            set_theme_mod('theme_color_4', '#f1e3b3');
+            set_theme_mod('theme_color_5', '#d2702e');
+            break;
+        case "c_theme_green":
+            set_theme_mod('theme_color_1', '#34342e');
+            set_theme_mod('theme_color_2', '#262726');
+            set_theme_mod('theme_color_3', '#d1d19c');
+            set_theme_mod('theme_color_4', '#dedcb3');
+            set_theme_mod('theme_color_5', '#8cb48d');
+            break;
+        case "c_theme_grey":
+            set_theme_mod('theme_color_1', '#3e4245');
+            set_theme_mod('theme_color_2', '#756152');
+            set_theme_mod('theme_color_3', '#d1c39c');
+            set_theme_mod('theme_color_4', '#bebb9f');
+            set_theme_mod('theme_color_5', '#b93729');
+            break;
+        case "c_theme_darkGreen":
+            set_theme_mod('theme_color_1', '#1a1a1d');
+            set_theme_mod('theme_color_2', '#679167');
+            set_theme_mod('theme_color_3', '#eed96d');
+            set_theme_mod('theme_color_4', '#ddb893');
+            set_theme_mod('theme_color_5', '#c3073f');
             break;
     }
 }
 
 function custom_css_color_output()
 {
-
 
     if ((get_theme_mod('theme_color_preset_enable') == true) && get_theme_mod('theme_color_preset')) {
         custom_color_theme(get_theme_mod('theme_color_theme_preset'));
@@ -511,8 +572,45 @@ add_action('wp_head', 'custom_css_color_output');
 //
 //Activer le Custom CSS pour les fonts
 //
+
+function custom_font_theme($custom_theme)
+{
+    switch ($custom_theme) {
+        case "c_theme_fonts_source-bebas":
+            set_theme_mod('theme_font_1', 'source_sans_pro');
+            set_theme_mod('theme_font_2', 'bebas_neue');
+            break;
+        case "c_theme_fonts_openSans-roboto":
+            set_theme_mod('theme_font_1', 'roboto');
+            set_theme_mod('theme_font_2', 'open_sans');
+            break;
+        case "c_theme_fonts_antonio-anton":
+            set_theme_mod('theme_font_1', 'anton');
+            set_theme_mod('theme_font_2', 'antonio');
+            break;
+        case "c_theme_fonts_zenDots-roboto":
+            set_theme_mod('theme_font_1', 'roboto');
+            set_theme_mod('theme_font_2', 'zen_dots');
+            break;
+        case "c_theme_fonts_notoSansJp-roboto":
+            set_theme_mod('theme_font_1', 'roboto');
+            set_theme_mod('theme_font_2', 'noto_sans_jp');
+            break;
+        case "c_theme_fonts_lato-roboto":
+            set_theme_mod('theme_font_1', 'roboto');
+            set_theme_mod('theme_font_2', 'lato');
+            break;
+    }
+}
+
 function custom_css_font_output()
 {
+
+    if ((get_theme_mod('theme_font_preset_enable') == true) && get_theme_mod('theme_font_theme_preset')) {
+        custom_font_theme(get_theme_mod('theme_font_theme_preset'));
+        set_theme_mod('theme_font_preset_enable', false);
+    }
+
     echo '<style type="text/css"> ';
     if (get_theme_mod('theme_font_1')) {
         echo '@import url("' . font_parser(get_theme_mod('theme_font_1'))['fontURL'] . '"); ';
@@ -573,6 +671,10 @@ function font_parser($theme_mod_font)
             $fontName = "'Montserrat', sans-serif";
             $fontURL = "https://fonts.googleapis.com/css2?family=Montserrat&display=swap";
             break;
+        case "anton":
+            $fontName = "'Anton', sans-serif";
+            $fontURL = "https://fonts.googleapis.com/css2?family=Anton&display=swap";
+            break;
     }
 
     return array(
@@ -583,3 +685,20 @@ function font_parser($theme_mod_font)
 
 
 add_action('wp_head', 'custom_css_font_output');
+
+//
+//Script javascript pour l'administration de wp_customize
+//
+function bootstrap5fullwidth_customizer_js()
+{
+	wp_enqueue_script( 
+		  'bootstrap5fullwidth-theme-customizer',			//Give the script an ID
+		  get_template_directory_uri().'/js/theme-customizer.min.js',//Point to file
+		  array( 'jquery','customize-preview' ),	//Define dependencies
+          '0.14',                    //Version
+		  true						//Put script in footer?
+	);
+}
+
+add_action( 'customize_controls_enqueue_scripts', 'bootstrap5fullwidth_customizer_js' );
+
