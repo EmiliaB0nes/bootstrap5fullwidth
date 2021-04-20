@@ -19,27 +19,24 @@ gulp.task('minify-css', () => {
   return gulp.src('./css/bootstrap5fullwidth.css')
     .pipe(cleanCSS({ compatibility: 'ie10' }))
     .pipe(rename("bootstrap5fullwidth.min.css"))
-    .pipe(gulp.dest('./prod/css/'));
+    .pipe(gulp.dest('./../css/'));
 });
 
 
-gulp.task("prod-sidebar-js", () => {
+gulp.task("prod-js", () => {
   return gulp.src('./js/*.js')
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./prod/js'));
+    .pipe(gulp.dest('./../js/'));
 });
 
+//gulp.task('prod-watch', function () {
+//  gulp.watch('./scss/bootstrap5fullwidth.scss', gulp.series('sass-css-dev', 'minify-css', 'prod-sidebar-js'));
+//});
 
-gulp.task('prod-watch', function () {
-  gulp.watch('./scss/bootstrap5fullwidth.scss', gulp.series('sass-css-dev', 'minify-css', 'prod-sidebar-js'));
-});
-
-
-
-gulp.task('prod-dep', gulp.series('sass-css-dev', 'minify-css', 'prod-sidebar-js'));
+gulp.task('prod-dep', gulp.series('minify-css-prod', 'prod-js'));
 
 gulp.task('minify-css-prod', () => {
   return gulp.src('./css/bootstrap5fullwidth.css')
