@@ -36,7 +36,7 @@ gulp.task("prod-js", () => {
 //  gulp.watch('./scss/bootstrap5fullwidth.scss', gulp.series('sass-css-dev', 'minify-css', 'prod-sidebar-js'));
 //});
 
-gulp.task('prod-dep', gulp.series('minify-css-prod', 'prod-js'));
+gulp.task('prod-dep', gulp.series('minify-css', 'prod-js'));
 
 gulp.task('minify-css-prod', () => {
   return gulp.src('./css/bootstrap5fullwidth.css')
