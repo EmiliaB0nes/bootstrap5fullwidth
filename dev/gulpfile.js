@@ -8,13 +8,14 @@ const uglify = require('gulp-uglify');
 
 sass.compiler = require('node-sass');
 
-
+//Just generate css
 gulp.task('sass-css-dev', function () {
   return gulp.src('./scss/bootstrap5fullwidth.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
 });
 
+//Minify CSS and move it to theme folder
 gulp.task('minify-css', () => {
   return gulp.src('./css/bootstrap5fullwidth.css')
     .pipe(cleanCSS({ compatibility: 'ie10' }))
@@ -22,7 +23,10 @@ gulp.task('minify-css', () => {
     .pipe(gulp.dest('./../css/'));
 });
 
+//Generate, minify and move css to theme folder
+gulp.task('css-prod', gulp.series('sass-css-dev', 'minify-css'));
 
+//Minify and move js to theme folder
 gulp.task("prod-js", () => {
   return gulp.src('./js/*.js')
     .pipe(uglify())
@@ -32,17 +36,14 @@ gulp.task("prod-js", () => {
     .pipe(gulp.dest('./../js/'));
 });
 
-//gulp.task('prod-watch', function () {
-//  gulp.watch('./scss/bootstrap5fullwidth.scss', gulp.series('sass-css-dev', 'minify-css', 'prod-sidebar-js'));
-//});
+//Process css and js and move it to theme folder
+gulp.task('prod', gulp.series('css-prod', 'prod-js'));
 
-gulp.task('prod-dep', gulp.series('minify-css', 'prod-js'));
-
-gulp.task('minify-css-prod', () => {
-  return gulp.src('./css/bootstrap5fullwidth.css')
-    .pipe(cleanCSS({ compatibility: 'ie10' }))
-    .pipe(rename("bootstrap5fullwidth.min.css"))
-    .pipe(gulp.dest('./../css/'));
+gulp.task('prod-watch', function () {
+  gulp.watch('./scss/bootstrap5fullwidth.scss', gulp.series('css-prod'));
+  gulp.watch('./js/*', gulp.series('prod-js'));
 });
 
-gulp.task('css-prod', gulp.series('sass-css-dev', 'minify-css-prod'));
+
+
+
