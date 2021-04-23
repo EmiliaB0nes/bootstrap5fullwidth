@@ -1,32 +1,16 @@
 jQuery(function () {
-    ////Uncheck apply colors theme
-    //jQuery( "#_customize-input-theme_color_preset_enable" ).prop( "checked", false );
-    ////Uncheck apply fonts theme
-    //jQuery( "#_customize-input-theme_font_preset_enable" ).prop( "checked", false );
+    // if our data block is not available, don't do anything
+    var $myData = jQuery('#myData');
+    if (!$myData.length)
+        return;
 
-    //Recharge la page si certains parametres sont check
-    if (jQuery('#_customize-input-theme_color_preset_enable').is(':checked')) {
-        location.reload();
+    // attempt to parse the content of our data block
+    try {
+        $myData = JSON.parse(jQuery.myData.text());
+    } catch (err) { // invalid json
+        return;
     }
-    if (jQuery('#_customize-input-theme_font_preset_enable').is(':checked')) {
-        location.reload();
-    }
 
-
-    //Recharge la page en cas de modification de certains parametres
-    //Il faut encore trouver une solution pour cacher le message d'erreur
-    jQuery("#save").click(function () {
-        if (jQuery('#_customize-input-theme_color_preset_enable').is(':checked')) {
-            //location.reload(); 
-            window.onbeforeunload = null;
-            window.location.reload();
-        }
-        if (jQuery('#_customize-input-theme_font_preset_enable').is(':checked')) {
-            //location.reload(); 
-            window.onbeforeunload = null;
-            window.location.reload();
-        }
-    });
-
-
+    // if parsing was successful, you should see the data in your console
+    console.log($myData);
 });
