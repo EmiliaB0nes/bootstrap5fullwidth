@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * Add our Customizer content
  */
@@ -28,20 +26,33 @@ function panel($wp_customize)
         'sanitize_callback' => 'sanitize_text_field'
     ));
 
+    // $wp_customize->add_control('theme_color_preset', array(
+    //     'label' => esc_html__('Theme de couleurs'),
+    //     'section' => 'section_color_theme',
+    //     'priority' => 8,
+    //     'type' => 'select',
+    //     'settings' => 'theme_color_theme_preset',
+    //     'choices' => array(
+    //         'c_theme_default' => __('Default Theme'),
+    //         'c_theme_fall' => __('Fall'),
+    //         'c_theme_blue' => __('Blue'),
+    //         'c_theme_green' => __('Green'),
+    //         'c_theme_grey' => __('Grey'),
+    //         'c_theme_darkGreen' => __('Dark Green'),
+    //         'c_theme_purple' => __('Purple'),
+    //         'c_theme_cowboyDowny' => __('Cowboy - Downy'),
+    //         'c_theme_williamCGreen' => __('William - Camouflage Green'),
+    //         'c_theme_tuataraLeather' => __('Tuatara - Leather'),
+    //     )
+    // ));
+
     $wp_customize->add_control('theme_color_preset', array(
         'label' => esc_html__('Theme de couleurs'),
         'section' => 'section_color_theme',
         'priority' => 8,
         'type' => 'select',
         'settings' => 'theme_color_theme_preset',
-        'choices' => array(
-            'c_theme_default' => __('Default Theme'),
-            'c_theme_fall' => __('Fall'),
-            'c_theme_blue' => __('Blue'),
-            'c_theme_green' => __('Green'),
-            'c_theme_grey' => __('Grey'),
-            'c_theme_darkGreen' => __('Dark Green'),
-        )
+        'choices' => array_combine(array_keys(themePresets('colors')), array_column(themePresets('colors'), 'title'))
     ));
 
     $wp_customize->add_setting('theme_color_preset_enable', array(
@@ -71,14 +82,7 @@ function panel($wp_customize)
         'priority' => 15,
         'type' => 'select',
         'settings' => 'theme_font_theme_preset',
-        'choices' => array(
-            'c_theme_fonts_source-bebas' => __('Default Theme'),
-            'c_theme_fonts_openSans-roboto' => __('Open Sans - Roboto'),
-            'c_theme_fonts_antonio-anton' => __('Antonio - Anton'),
-            'c_theme_fonts_zenDots-roboto' => __('Zen Dots - Roboto'),
-            'c_theme_fonts_notoSansJp-roboto' => __('Noto Sans JP - Roboto'),
-            'c_theme_fonts_lato-roboto' => __('Lato - Roboto'),
-        )
+        'choices' => array_combine(array_keys(themePresets('fonts')), array_column(themePresets('fonts'), 'title'))
     ));
 
     $wp_customize->add_setting('theme_font_preset_enable', array(
@@ -444,6 +448,34 @@ function custom_color_theme($custom_theme)
             set_theme_mod('theme_color_4', '#ddb893');
             set_theme_mod('theme_color_5', '#c3073f');
             break;
+        case "c_theme_purple":
+            set_theme_mod('theme_color_1', '#46303b');
+            set_theme_mod('theme_color_2', '#705176');
+            set_theme_mod('theme_color_3', '#cad6db');
+            set_theme_mod('theme_color_4', '#eec190');
+            set_theme_mod('theme_color_5', '#3c6986');
+            break;
+        case "c_theme_cowboyDowny":
+            set_theme_mod('theme_color_1', '#4f2d30');
+            set_theme_mod('theme_color_2', '#65c7b4');
+            set_theme_mod('theme_color_3', '#de7b5c');
+            set_theme_mod('theme_color_4', '#eec190');
+            set_theme_mod('theme_color_5', '#caae84');
+            break;
+        case "c_theme_williamCGreen":
+            set_theme_mod('theme_color_1', '#365a62');
+            set_theme_mod('theme_color_2', '#79876c');
+            set_theme_mod('theme_color_3', '#fcbe46');
+            set_theme_mod('theme_color_4', '#eec190');
+            set_theme_mod('theme_color_5', '#d43b47');
+            break;
+        case "c_theme_tuataraLeather":
+            set_theme_mod('theme_color_1', '#34342e');
+            set_theme_mod('theme_color_2', '#91614f');
+            set_theme_mod('theme_color_3', '#dd8a3d');
+            set_theme_mod('theme_color_4', '#eec190');
+            set_theme_mod('theme_color_5', '#b8c8b3');
+            break;
     }
 }
 
@@ -604,9 +636,12 @@ function bootstrap5fullwidth_customizer_js_datas()
     ];
 ?>
     <script>
-        var jsonContent = '<?= json_encode($myData, JSON_UNESCAPED_SLASHES) ; ?>';
+        var jsonContent = '<?= json_encode($myData, JSON_UNESCAPED_SLASHES); ?>';
+        <?php //var_dump(array_column(themeColorsPresets(), 'title'));
+    //echo('test4324432'); ?>
     </script>
 <?php
+    
 }
 add_action('customize_preview_init', 'bootstrap5fullwidth_customizer_js_datas');
 
@@ -638,3 +673,4 @@ function bootstrap5fullwidth_customizer_admin_js()
 }
 
 add_action('customize_controls_enqueue_scripts', 'bootstrap5fullwidth_customizer_admin_js');
+

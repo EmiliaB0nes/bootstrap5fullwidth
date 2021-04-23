@@ -4,7 +4,8 @@
 //Charger les autres fichiers
 $roots_includes = array(
     './functions-wp_customize.php',
-    './function-theme_settings_page.php'
+    './function-theme_settings_page.php',
+    './function-theme_presets.php'
 );
 
 foreach ($roots_includes as $file) {
