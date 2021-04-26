@@ -1,5 +1,7 @@
 <?php
 
+//Themes & Fonts settings List
+
 function themePresets($type)
 {
     $colorPresets = array(

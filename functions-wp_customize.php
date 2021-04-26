@@ -3,6 +3,7 @@
 /**
  * Add our Customizer content
  */
+
 function panel($wp_customize)
 {
 
@@ -13,7 +14,7 @@ function panel($wp_customize)
     ));
 
 
-    //Colors/Font Theme
+    //Colors-Font Theme
     $wp_customize->add_section('section_color_theme', array(
         'title' => esc_html__('Themes'),
         'priority' => 9,
@@ -25,26 +26,6 @@ function panel($wp_customize)
         'transport' => 'postMessage',
         'sanitize_callback' => 'sanitize_text_field'
     ));
-
-    // $wp_customize->add_control('theme_color_preset', array(
-    //     'label' => esc_html__('Theme de couleurs'),
-    //     'section' => 'section_color_theme',
-    //     'priority' => 8,
-    //     'type' => 'select',
-    //     'settings' => 'theme_color_theme_preset',
-    //     'choices' => array(
-    //         'c_theme_default' => __('Default Theme'),
-    //         'c_theme_fall' => __('Fall'),
-    //         'c_theme_blue' => __('Blue'),
-    //         'c_theme_green' => __('Green'),
-    //         'c_theme_grey' => __('Grey'),
-    //         'c_theme_darkGreen' => __('Dark Green'),
-    //         'c_theme_purple' => __('Purple'),
-    //         'c_theme_cowboyDowny' => __('Cowboy - Downy'),
-    //         'c_theme_williamCGreen' => __('William - Camouflage Green'),
-    //         'c_theme_tuataraLeather' => __('Tuatara - Leather'),
-    //     )
-    // ));
 
     $wp_customize->add_control('theme_color_preset', array(
         'label' => esc_html__('Theme de couleurs'),
@@ -175,22 +156,6 @@ function panel($wp_customize)
 
 
     //Fonts
-
-    //Simple liste de fonts
-    $fontList = array(
-        'bebas_neue' => __('Bebas Neue'),
-        'source_sans_pro' => __('Source Sans Pro'),
-        'roboto' => __('Roboto'),
-        'antonio' => __('Antonio'),
-        'zen_dots' => __('Zen Dots'),
-        'open_sans' => __('Open Sans'),
-        'karantina' => __('Karantina'),
-        'noto_sans_jp' => __('Noto Sans JP'),
-        'lato' => __('Lato'),
-        'montserrat' => __('Montserrat'),
-        'anton' => __('Anton'),
-    );
-
     $wp_customize->add_section('section_font', array(
         'title' => esc_html__('Polices'),
         'priority' => 11,
@@ -204,11 +169,11 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_font_1', array(
-        'label' => esc_html__('Police primaire'),
+        'label' => esc_html__('Police Texte'),
         'section' => 'section_font',
-        'priority' => 10,
+        'priority' => 12,
         'type' => 'select',
-        'choices' => $fontList
+        'choices' => array_combine(array_keys(fontList()), array_column(fontList(), 'name'))
     ));
 
     $wp_customize->add_setting('theme_font_2', array(
@@ -218,11 +183,11 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_font_2', array(
-        'label' => esc_html__('Police secondaire'),
+        'label' => esc_html__('Police Titre'),
         'section' => 'section_font',
-        'priority' => 10,
+        'priority' => 11,
         'type' => 'select',
-        'choices' => $fontList
+        'choices' => array_combine(array_keys(fontList()), array_column(fontList(), 'name'))
     ));
 
 
@@ -399,85 +364,48 @@ function panel($wp_customize)
 
 add_action('customize_register', 'panel');
 
+
 //
 //Activer le Custom CSS pour les couleurs (Fonctionne partiellement)
 //
-
 function custom_color_theme($custom_theme)
 {
-    switch ($custom_theme) {
-        case "c_theme_default":
-            set_theme_mod('theme_color_1', '#292320');
-            set_theme_mod('theme_color_2', '#487b89');
-            set_theme_mod('theme_color_3', '#f4d58d');
-            set_theme_mod('theme_color_4', '#eec190');
-            set_theme_mod('theme_color_5', '#cc4e1f');
-            break;
-        case "c_theme_fall":
-            set_theme_mod('theme_color_1', '#5e4650');
-            set_theme_mod('theme_color_2', '#cf5f57');
-            set_theme_mod('theme_color_3', '#efc192');
-            set_theme_mod('theme_color_4', '#eec190');
-            set_theme_mod('theme_color_5', '#cc4e1f');
-            break;
-        case "c_theme_blue":
-            set_theme_mod('theme_color_1', '#20232f');
-            set_theme_mod('theme_color_2', '#58878d');
-            set_theme_mod('theme_color_3', '#c4a596');
-            set_theme_mod('theme_color_4', '#f1e3b3');
-            set_theme_mod('theme_color_5', '#d2702e');
-            break;
-        case "c_theme_green":
-            set_theme_mod('theme_color_1', '#34342e');
-            set_theme_mod('theme_color_2', '#262726');
-            set_theme_mod('theme_color_3', '#d1d19c');
-            set_theme_mod('theme_color_4', '#dedcb3');
-            set_theme_mod('theme_color_5', '#8cb48d');
-            break;
-        case "c_theme_grey":
-            set_theme_mod('theme_color_1', '#3e4245');
-            set_theme_mod('theme_color_2', '#756152');
-            set_theme_mod('theme_color_3', '#d1c39c');
-            set_theme_mod('theme_color_4', '#bebb9f');
-            set_theme_mod('theme_color_5', '#b93729');
-            break;
-        case "c_theme_darkGreen":
-            set_theme_mod('theme_color_1', '#1a1a1d');
-            set_theme_mod('theme_color_2', '#679167');
-            set_theme_mod('theme_color_3', '#eed96d');
-            set_theme_mod('theme_color_4', '#ddb893');
-            set_theme_mod('theme_color_5', '#c3073f');
-            break;
-        case "c_theme_purple":
-            set_theme_mod('theme_color_1', '#46303b');
-            set_theme_mod('theme_color_2', '#705176');
-            set_theme_mod('theme_color_3', '#cad6db');
-            set_theme_mod('theme_color_4', '#eec190');
-            set_theme_mod('theme_color_5', '#3c6986');
-            break;
-        case "c_theme_cowboyDowny":
-            set_theme_mod('theme_color_1', '#4f2d30');
-            set_theme_mod('theme_color_2', '#65c7b4');
-            set_theme_mod('theme_color_3', '#de7b5c');
-            set_theme_mod('theme_color_4', '#eec190');
-            set_theme_mod('theme_color_5', '#caae84');
-            break;
-        case "c_theme_williamCGreen":
-            set_theme_mod('theme_color_1', '#365a62');
-            set_theme_mod('theme_color_2', '#79876c');
-            set_theme_mod('theme_color_3', '#fcbe46');
-            set_theme_mod('theme_color_4', '#eec190');
-            set_theme_mod('theme_color_5', '#d43b47');
-            break;
-        case "c_theme_tuataraLeather":
-            set_theme_mod('theme_color_1', '#34342e');
-            set_theme_mod('theme_color_2', '#91614f');
-            set_theme_mod('theme_color_3', '#dd8a3d');
-            set_theme_mod('theme_color_4', '#eec190');
-            set_theme_mod('theme_color_5', '#b8c8b3');
-            break;
+    if (in_array($custom_theme, array_keys(themePresets('colors')))) {
+        set_theme_mod('theme_color_1', themePresets('colors')[$custom_theme]['theme_color_1']);
+        set_theme_mod('theme_color_2', themePresets('colors')[$custom_theme]['theme_color_2']);
+        set_theme_mod('theme_color_3', themePresets('colors')[$custom_theme]['theme_color_3']);
+        set_theme_mod('theme_color_4', themePresets('colors')[$custom_theme]['theme_color_4']);
+        set_theme_mod('theme_color_5', themePresets('colors')[$custom_theme]['theme_color_5']);
     }
 }
+
+
+//
+//Activer le Custom CSS pour les fonts
+//
+function custom_font_theme($custom_theme)
+{
+    if (in_array($custom_theme, array_keys(themePresets('fonts')))) {
+        set_theme_mod('theme_font_1', themePresets('fonts')[$custom_theme]['theme_font_1']);
+        set_theme_mod('theme_font_2', themePresets('fonts')[$custom_theme]['theme_font_2']);
+    }
+}
+
+
+function font_parser($theme_mod_font)
+{
+    if (in_array($theme_mod_font, array_keys(fontList()))) {
+        $fontName = fontList()[$theme_mod_font]['cssName'];
+        $fontURL = fontList()[$theme_mod_font]['url'];
+    }
+
+    return array(
+        "fontName" => $fontName,
+        "fontURL" => $fontURL
+    );
+}
+add_action('wp_head', 'custom_css_font_output');
+
 
 function custom_css_color_output()
 {
@@ -506,42 +434,8 @@ function custom_css_color_output()
     }
     echo '}</style>';
 }
-
 add_action('wp_head', 'custom_css_color_output');
 
-
-//
-//Activer le Custom CSS pour les fonts
-//
-function custom_font_theme($custom_theme)
-{
-    switch ($custom_theme) {
-        case "c_theme_fonts_source-bebas":
-            set_theme_mod('theme_font_1', 'source_sans_pro');
-            set_theme_mod('theme_font_2', 'bebas_neue');
-            break;
-        case "c_theme_fonts_openSans-roboto":
-            set_theme_mod('theme_font_1', 'roboto');
-            set_theme_mod('theme_font_2', 'open_sans');
-            break;
-        case "c_theme_fonts_antonio-anton":
-            set_theme_mod('theme_font_1', 'anton');
-            set_theme_mod('theme_font_2', 'antonio');
-            break;
-        case "c_theme_fonts_zenDots-roboto":
-            set_theme_mod('theme_font_1', 'roboto');
-            set_theme_mod('theme_font_2', 'zen_dots');
-            break;
-        case "c_theme_fonts_notoSansJp-roboto":
-            set_theme_mod('theme_font_1', 'roboto');
-            set_theme_mod('theme_font_2', 'noto_sans_jp');
-            break;
-        case "c_theme_fonts_lato-roboto":
-            set_theme_mod('theme_font_1', 'roboto');
-            set_theme_mod('theme_font_2', 'lato');
-            break;
-    }
-}
 
 function custom_css_font_output()
 {
@@ -568,62 +462,6 @@ function custom_css_font_output()
     echo '}</style>';
 }
 
-function font_parser($theme_mod_font)
-{
-    switch ($theme_mod_font) {
-        case "bebas_neue":
-            $fontName = "'Bebas Neue', cursive ";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap";
-            break;
-        case "source_sans_pro":
-            $fontName = "'Source Sans Pro', sans-serif";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap";
-            break;
-        case "roboto":
-            $fontName = "'Roboto', sans-serif";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
-            break;
-        case "antonio":
-            $fontName = "'Antonio', sans-serif";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Antonio&display=swap";
-            break;
-        case "zen_dots":
-            $fontName = "'Zen Dots', cursive";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap";
-            break;
-        case "open_sans":
-            $fontName = "'Open Sans', sans-serif";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap";
-            break;
-        case "karantina":
-            $fontName = "'Karantina', cursive";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Karantina&display=swap";
-            break;
-        case "noto_sans_jp":
-            $fontName = "'Noto Sans JP', sans-serif";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap";
-            break;
-        case "lato":
-            $fontName = "'Lato', sans-serif";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Lato&display=swap";
-            break;
-        case "montserrat":
-            $fontName = "'Montserrat', sans-serif";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Montserrat&display=swap";
-            break;
-        case "anton":
-            $fontName = "'Anton', sans-serif";
-            $fontURL = "https://fonts.googleapis.com/css2?family=Anton&display=swap";
-            break;
-    }
-
-    return array(
-        "fontName" => $fontName,
-        "fontURL" => $fontURL
-    );
-}
-add_action('wp_head', 'custom_css_font_output');
-
 
 //
 //Script javascript pour l'affichage de certaines modifications en live
@@ -638,10 +476,10 @@ function bootstrap5fullwidth_customizer_js_datas()
     <script>
         var jsonContent = '<?= json_encode($myData, JSON_UNESCAPED_SLASHES); ?>';
         <?php //var_dump(array_column(themeColorsPresets(), 'title'));
-    //echo('test4324432'); ?>
+        //echo('test4324432'); 
+        ?>
     </script>
 <?php
-    
 }
 add_action('customize_preview_init', 'bootstrap5fullwidth_customizer_js_datas');
 
@@ -673,4 +511,3 @@ function bootstrap5fullwidth_customizer_admin_js()
 }
 
 add_action('customize_controls_enqueue_scripts', 'bootstrap5fullwidth_customizer_admin_js');
-
