@@ -1,8 +1,8 @@
 <?php
 
-/**
- * Add our Customizer content
- */
+//
+// Add Customizer content
+//
 
 function panel($wp_customize)
 {
@@ -44,7 +44,7 @@ function panel($wp_customize)
 
     $wp_customize->add_control('theme_color_preset_enable', array(
         'label' => esc_html__('Appliquer les Couleurs'),
-        'description' => esc_html__('Activer cette option pour appliquer un thème. Changer de thème remplacera les paramètres de couleurs.'),
+        'description' => esc_html__('Activer cette option pour confirmer l\'appliquation d\'un thème. Changer de thème remplacera les paramètres de couleurs.'),
         'type' => 'checkbox',
         'section' => 'section_color_theme',
         'settings' => 'theme_color_preset_enable',
@@ -74,7 +74,7 @@ function panel($wp_customize)
 
     $wp_customize->add_control('theme_font_preset_enable', array(
         'label' => esc_html__('Appliquer les Polices'),
-        'description' => esc_html__('Activer cette option pour appliquer un thème. Changer de thème remplacera les anciens paramètres de polices.'),
+        'description' => esc_html__('Activer cette option pour confirmer l\'appliquation d\'un thème. Changer de thème remplacera les anciens paramètres de polices.'),
         'type' => 'checkbox',
         'section' => 'section_color_theme',
         'settings' => 'theme_font_preset_enable',
@@ -468,32 +468,17 @@ function custom_css_font_output()
 //
 function bootstrap5fullwidth_customizer_js_datas()
 {
-    $myData = [
-        'presetColors' => 'test',
-        'presetFonts' => 'unbfont',
-    ];
+
 ?>
-    <script>
-        var jsonContent = '<?= json_encode($myData, JSON_UNESCAPED_SLASHES); ?>';
-        <?php //var_dump(array_column(themeColorsPresets(), 'title'));
-        //echo('test4324432'); 
-        ?>
+    <script type="text/javascript">
+        var customizerGetFontsSettings = <?php echo json_encode(fontList()); ?>;
+        var customizerGetColorThemes = <?php echo json_encode(themePresets('colors')); ?>;
+        var customizerGetFontsThemes = <?php echo json_encode(themePresets('fonts')); ?>;
     </script>
 <?php
 }
+//add_action('customize_controls_enqueue_scripts', 'bootstrap5fullwidth_customizer_js_datas');
 add_action('customize_preview_init', 'bootstrap5fullwidth_customizer_js_datas');
-
-function bootstrap5fullwidth_customizer_js()
-{
-    wp_enqueue_script(
-        'bootstrap5fullwidth-theme-customizer',            //Give the script an ID
-        get_template_directory_uri() . '/js/theme-customizer.min.js', //Point to file
-        array('jquery', 'customize-preview'),    //Define dependencies
-        '0.4',                        //Define a version (optional) 
-        true                        //Put script in footer?
-    );
-}
-add_action('customize_preview_init', 'bootstrap5fullwidth_customizer_js');
 
 
 //
@@ -505,9 +490,22 @@ function bootstrap5fullwidth_customizer_admin_js()
         'bootstrap5fullwidth-theme-customizer-admin',            //Give the script an ID
         get_template_directory_uri() . '/js/theme-customizer-admin.min.js', //Point to file
         array('jquery', 'customize-preview'),    //Define dependencies
-        '0.17',                    //Define a version (optional) 
+        '0.' . rand(1, 99),                    //Define a version to force reloading script
         true                        //Put script in footer?
     );
 }
-
+// add_action('customize_controls_enqueue_scripts', 'bootstrap5fullwidth_customizer_admin_js');
 add_action('customize_controls_enqueue_scripts', 'bootstrap5fullwidth_customizer_admin_js');
+
+
+function bootstrap5fullwidth_customizer_js()
+{
+    wp_enqueue_script(
+        'bootstrap5fullwidth-theme-customizer',            //Give the script an ID
+        get_template_directory_uri() . '/js/theme-customizer.min.js', //Point to file
+        array('jquery', 'customize-preview'),    //Define dependencies
+        rand(1, 1000000),                        //Define a version to force reloading script
+        false                        //Put script in footer?
+    );
+}
+add_action('customize_preview_init', 'bootstrap5fullwidth_customizer_js');
