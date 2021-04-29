@@ -44,8 +44,8 @@
                 $("body").get(0).style.setProperty("--color3", colorSelect.theme_color_3);
                 $("body").get(0).style.setProperty("--color4", colorSelect.theme_color_4);
                 $("body").get(0).style.setProperty("--color5", colorSelect.theme_color_5);
-                colorChanged = true;
             }
+            colorChanged = true;
         });
 
     });
@@ -90,9 +90,8 @@
 
                 $("body").get(0).style.setProperty("--font2", customizerGetFontsSettings[fontTitle].cssName);
                 $("body").get(0).style.setProperty("--font1", customizerGetFontsSettings[fontText].cssName);
-
-                fontChanged = true;
             }
+            fontChanged = true;
         });
     });
 
