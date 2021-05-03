@@ -314,36 +314,38 @@ function panel($wp_customize)
         'settings' => 'contact_modal_enable',
         'priority' => 10,
     ));
+    
+    if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
+        $wp_customize->add_setting('contact_modal_shortcode', array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field'
+        ));
 
-    $wp_customize->add_setting('contact_modal_shortcode', array(
-        'default' => '',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_text_field'
-    ));
+        $wp_customize->add_control('contact_modal_shortcode', array(
+            'label' => esc_html__('Shortcode du formulaire Contact 7'),
+            'description' => esc_html__('Veuillez utiliser le template fourni dans la documentation, sinon il ne fonctionnera pas'),
+            'type' => 'text',
+            'section' => 'section_contact_modal',
+            'settings' => 'contact_modal_shortcode',
+            'priority' => 20,
+        ));
 
-    $wp_customize->add_control('contact_modal_shortcode', array(
-        'label' => esc_html__('Shortcode du formulaire Contact 7'),
-        'description' => esc_html__('Veuillez utiliser le template fourni dans la documentation, sinon il ne fonctionnera pas'),
-        'type' => 'text',
-        'section' => 'section_contact_modal',
-        'settings' => 'contact_modal_shortcode',
-        'priority' => 20,
-    ));
+        $wp_customize->add_setting('contact_modal_link_enable', array(
+            'default' => 0,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field'
+        ));
 
-    $wp_customize->add_setting('contact_modal_link_enable', array(
-        'default' => 0,
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_text_field'
-    ));
-
-    $wp_customize->add_control('contact_modal_link_enable', array(
-        'label' => esc_html__('Activer'),
-        'description' => esc_html__("Activer/Désactiver la possibilité d'utiliser un lien personnalisé (désactive le modal)"),
-        'type' => 'checkbox',
-        'section' => 'section_contact_modal',
-        'settings' => 'contact_modal_link_enable',
-        'priority' => 30,
-    ));
+        $wp_customize->add_control('contact_modal_link_enable', array(
+            'label' => esc_html__('Activer'),
+            'description' => esc_html__("Activer/Désactiver la possibilité d'utiliser un lien personnalisé (désactive le modal)"),
+            'type' => 'checkbox',
+            'section' => 'section_contact_modal',
+            'settings' => 'contact_modal_link_enable',
+            'priority' => 30,
+        ));
+    }
 
     $wp_customize->add_setting('contact_modal_link', array(
         'default' => '',

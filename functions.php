@@ -65,3 +65,5 @@ add_action('wp_enqueue_scripts', 'load_jquery');
 // }
 
 // add_action("init", "wpm_custom_post_type", 0);
+
+

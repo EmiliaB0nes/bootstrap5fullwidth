@@ -37,7 +37,7 @@
                         Menu</button>
                 </div>
                 <?php if (get_theme_mod('contact_modal_enable')) {
-                    if (get_theme_mod('contact_modal_link_enable')) {
+                    if (get_theme_mod('contact_modal_link_enable') || !is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
                 ?>
                         <a href="<?php if (get_theme_mod('contact_modal_link')) : ?>
                         <?php echo get_theme_mod('contact_modal_link'); ?>
@@ -57,6 +57,8 @@
     </header>
     <?php
     //Ajout du modal de contact
-    if (get_theme_mod('contact_modal_enable')) {
-        include get_template_directory() . '/components/contactForm.php';
+    if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
+        if (get_theme_mod('contact_modal_enable')) {
+            include get_template_directory() . '/components/contactForm.php';
+        }
     } ?>
