@@ -11,6 +11,8 @@
     var baseColor3 = getComputedStyle(document.documentElement).getPropertyValue('--color3');
     var baseColor4 = getComputedStyle(document.documentElement).getPropertyValue('--color4');
     var baseColor5 = getComputedStyle(document.documentElement).getPropertyValue('--color5');
+    var baseColor6 = getComputedStyle(document.documentElement).getPropertyValue('--color6');
+    var baseColorInvert = getComputedStyle(document.documentElement).getPropertyValue('--theme_color_invert_enable');
 
 
     wp.customize('theme_color_preset_enable', function (value) {
@@ -23,6 +25,13 @@
                     $("body").get(0).style.setProperty("--color3", colorSelect.theme_color_3);
                     $("body").get(0).style.setProperty("--color4", colorSelect.theme_color_4);
                     $("body").get(0).style.setProperty("--color5", colorSelect.theme_color_5);
+                    $("body").get(0).style.setProperty("--color6", colorSelect.theme_color_6);
+                    if (colorSelect.theme_color_invert_enable){
+                        $("body").get(0).style.setProperty("--theme_color_invert_enable", 'invert(1)');
+                    }
+                    else{
+                        $("body").get(0).style.setProperty("--theme_color_invert_enable", 'invert(0)');
+                    }
                 }
             }
             else {
@@ -31,6 +40,8 @@
                 $("body").get(0).style.setProperty("--color3", baseColor3);
                 $("body").get(0).style.setProperty("--color4", baseColor4);
                 $("body").get(0).style.setProperty("--color5", baseColor5);
+                $("body").get(0).style.setProperty("--color6", baseColor6);
+                $("body").get(0).style.setProperty("--theme_color_invert_enable", baseColorInvert);
             }
         });
     });
@@ -44,6 +55,13 @@
                 $("body").get(0).style.setProperty("--color3", colorSelect.theme_color_3);
                 $("body").get(0).style.setProperty("--color4", colorSelect.theme_color_4);
                 $("body").get(0).style.setProperty("--color5", colorSelect.theme_color_5);
+                $("body").get(0).style.setProperty("--color6", colorSelect.theme_color_6);
+                if (colorSelect.theme_color_invert_enable){
+                    $("body").get(0).style.setProperty("--theme_color_invert_enable", 'invert(1)');
+                }
+                else{
+                    $("body").get(0).style.setProperty("--theme_color_invert_enable", 'invert(0)');
+                }
             }
             colorChanged = true;
         });

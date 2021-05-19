@@ -26,6 +26,9 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 	--color3: #f4d58d;
 	--color4: #eec190;
 	--color5: #cc4e1f;
+	--color6: #ffffff;
+	--theme_color_invert_enable: invert(0);
+	
 
 	--font1: "Source Sans Pro", sans-serif;
 	--font2: "Bebas Neue", cursive;
@@ -38,6 +41,10 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 .navbox {
 	margin: 10px 1% 0px 0.9%;
+}
+
+.navbar-toggler-icon{
+	filter: var(--theme_color_invert_enable);
 }
 
 .sidebar {
@@ -62,13 +69,13 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 25px;
-	color: #fff;
+	color: var(--color6);
 	display: block;
 	transition: 0.3s;
 }
 
 .sidebar a:hover {
-	color: #f1f1f1;
+	color: var(--color6);
 }
 
 .sidebar .closebtn {
@@ -82,7 +89,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 .openbtn {
 	cursor: pointer;
 	background-color: rgba(0, 0, 0, 0);
-	color: white;
+	color: var(--color6) !important;
 	padding: 10px 0px;
 	border: none;
 }
@@ -292,7 +299,7 @@ body p {
 }
 
 .navbar-dark {
-	color: white;
+	color: var(--color6);
 }
 
 .bg-dark {
@@ -345,7 +352,7 @@ body p {
 
 .contentcolor1 {
 	background-color: var(--color1);
-	color: white;
+	color: var(--color6);
 }
 
 .titleseparationarea {
@@ -371,17 +378,18 @@ body p {
 
 .rounded-circle img {
 	transform: scale(0.6);
+	filter: var(--theme_color_invert_enable);
 }
 
 .bulletarea p {
 	font-family: var(--font1);
-	color: white;
+	color: var(--color6);
 	@include font-size(1.9rem);
 }
 
 .textarea1 h2 {
 	font-family: var(--font1);
-	color: white;
+	color: var(--color6);
 	font-weight: bold;
 	line-height: 2.5;
 	@include font-size(2.5rem);
@@ -389,7 +397,7 @@ body p {
 
 .textarea1 h3 {
 	font-family: var(--font1);
-	color: white;
+	color: var(--color6);
 	font-weight: bold;
 	line-height: 2;
 	@include font-size(2.2rem);
@@ -397,19 +405,19 @@ body p {
 
 .textarea1 p {
 	font-family: var(--font1);
-	color: white;
+	color: var(--color6);
 	line-height: 1.6;
 	@include font-size(1.9rem);
 }
 
 footer p {
 	font-family: var(--font1);
-	color: white;
+	color: var(--color6);
 	@include font-size(1.8rem);
 }
 
 footer a {
-	color: white;
+	color: var(--color6);
 	text-decoration: none;
 }
 

@@ -154,6 +154,34 @@ function panel($wp_customize)
         'type' => 'color',
     ));
 
+    $wp_customize->add_setting('theme_color_6', array(
+        'default' => '#ffffff',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+
+    $wp_customize->add_control('theme_color_6', array(
+        'label' => esc_html__('Couleur 6'),
+        'section' => 'section_color',
+        'priority' => 10,
+        'type' => 'color',
+    ));
+
+    $wp_customize->add_setting('theme_color_invert_enable', array(
+        'default' => 0,
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('theme_color_invert_enable', array(
+        'label' => esc_html__('Inverser les couleurs des logos'),
+        //'description' => esc_html__('Activer cette option pour confirmer l\'appliquation d\'un thème. Changer de thème remplacera les anciens paramètres de polices.'),
+        'type' => 'checkbox',
+        'section' => 'section_color',
+        'settings' => 'theme_color_invert_enable',
+        'priority' => 10,
+    ));
+
 
     //Fonts
     $wp_customize->add_section('section_font', array(
@@ -378,6 +406,8 @@ function custom_color_theme($custom_theme)
         set_theme_mod('theme_color_3', themePresets('colors')[$custom_theme]['theme_color_3']);
         set_theme_mod('theme_color_4', themePresets('colors')[$custom_theme]['theme_color_4']);
         set_theme_mod('theme_color_5', themePresets('colors')[$custom_theme]['theme_color_5']);
+        set_theme_mod('theme_color_6', themePresets('colors')[$custom_theme]['theme_color_6']);
+        set_theme_mod('theme_color_invert_enable', themePresets('colors')[$custom_theme]['theme_color_invert_enable']);
     }
 }
 
@@ -434,7 +464,13 @@ function custom_css_color_output()
     if (get_theme_mod('theme_color_5')) {
         echo '--color5: ' . get_theme_mod('theme_color_5') . '; ';
     }
-    echo '}</style>';
+    if (get_theme_mod('theme_color_6')) {
+        echo '--color6: ' . get_theme_mod('theme_color_6') . '; ';
+    }
+    if (get_theme_mod('theme_color_invert_enable')) {
+        echo '--theme_color_invert_enable: invert(1);';
+    }
+    echo'}</style>';
 }
 add_action('wp_head', 'custom_css_color_output');
 
