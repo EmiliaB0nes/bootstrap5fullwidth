@@ -66,4 +66,6 @@ add_action('wp_enqueue_scripts', 'load_jquery');
 
 // add_action("init", "wpm_custom_post_type", 0);
 
+load_theme_textdomain( 'wpb5Translations', get_template_directory() . '/lang' );
+
 

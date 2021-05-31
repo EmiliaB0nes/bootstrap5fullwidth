@@ -8,15 +8,15 @@ function panel($wp_customize)
 {
 
     $wp_customize->add_panel('theme_options_panel', array(
-        'title' => esc_html__('Theme Options'),
-        'description' => 'Settings for Bootstrap5FullWidth',
+        'title' => esc_html__('Theme Options', 'wpb5Translations'),
+        'description' => esc_html__('Settings for Bootstrap5FullWidth', 'wpb5Translations'),
         'priority' => 10,
     ));
 
 
     //Colors-Font Theme
     $wp_customize->add_section('section_color_theme', array(
-        'title' => esc_html__('Themes'),
+        'title' => esc_html__('Themes', 'wpb5Translations'),
         'priority' => 9,
         'panel' => 'theme_options_panel',
     ));
@@ -28,7 +28,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_preset', array(
-        'label' => esc_html__('Theme de couleurs'),
+        'label' => esc_html__('Color Theme', 'wpb5Translations'),
         'section' => 'section_color_theme',
         'priority' => 8,
         'type' => 'select',
@@ -43,8 +43,8 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_preset_enable', array(
-        'label' => esc_html__('Appliquer les Couleurs'),
-        'description' => esc_html__('Activer cette option pour confirmer l\'appliquation d\'un thème. Changer de thème remplacera les paramètres de couleurs.'),
+        'label' => esc_html__('Apply Colors', 'wpb5Translations'),
+        'description' => esc_html__('Enable this option to confirm appliquation a theme. Changing theme will override the colors settings.', 'wpb5Translations'),
         'type' => 'checkbox',
         'section' => 'section_color_theme',
         'settings' => 'theme_color_preset_enable',
@@ -58,7 +58,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_font_preset', array(
-        'label' => esc_html__('Theme de polices'),
+        'label' => esc_html__('Fonts Theme', 'wpb5Translations'),
         'section' => 'section_color_theme',
         'priority' => 15,
         'type' => 'select',
@@ -73,8 +73,8 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_font_preset_enable', array(
-        'label' => esc_html__('Appliquer les Polices'),
-        'description' => esc_html__('Activer cette option pour confirmer l\'appliquation d\'un thème. Changer de thème remplacera les anciens paramètres de polices.'),
+        'label' => esc_html__('Apply Fonts', 'wpb5Translations'),
+        'description' => esc_html__('Enable this option to confirm appliquation a theme. Change theme will override the fonts settings.', 'wpb5Translations'),
         'type' => 'checkbox',
         'section' => 'section_color_theme',
         'settings' => 'theme_font_preset_enable',
@@ -84,7 +84,7 @@ function panel($wp_customize)
 
     //Colors
     $wp_customize->add_section('section_color', array(
-        'title' => esc_html__('Couleurs'),
+        'title' => esc_html__('Colors', 'wpb5Translations'),
         'priority' => 10,
         'panel' => 'theme_options_panel',
     ));
@@ -96,7 +96,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_1', array(
-        'label' => esc_html__('Couleur 1'),
+        'label' => esc_html__('Color 1', 'wpb5Translations'),
         'section' => 'section_color',
         'priority' => 10,
         'type' => 'color',
@@ -109,7 +109,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_2', array(
-        'label' => esc_html__('Couleur 2'),
+        'label' => esc_html__('Color 2', 'wpb5Translations'),
         'section' => 'section_color',
         'priority' => 10,
         'type' => 'color',
@@ -122,7 +122,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_3', array(
-        'label' => esc_html__('Couleur 3'),
+        'label' => esc_html__('Color 3', 'wpb5Translations'),
         'section' => 'section_color',
         'priority' => 10,
         'type' => 'color',
@@ -135,7 +135,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_4', array(
-        'label' => esc_html__('Couleur 4'),
+        'label' => esc_html__('Color 4', 'wpb5Translations'),
         'section' => 'section_color',
         'priority' => 10,
         'type' => 'color',
@@ -148,7 +148,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_5', array(
-        'label' => esc_html__('Couleur 5'),
+        'label' => esc_html__('Color 5', 'wpb5Translations'),
         'section' => 'section_color',
         'priority' => 10,
         'type' => 'color',
@@ -161,7 +161,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_6', array(
-        'label' => esc_html__('Couleur 6'),
+        'label' => esc_html__('Color 6', 'wpb5Translations'),
         'section' => 'section_color',
         'priority' => 10,
         'type' => 'color',
@@ -174,8 +174,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_color_invert_enable', array(
-        'label' => esc_html__('Inverser les couleurs des logos'),
-        //'description' => esc_html__('Activer cette option pour confirmer l\'appliquation d\'un thème. Changer de thème remplacera les anciens paramètres de polices.'),
+        'label' => esc_html__('Invert the colors of logos', 'wpb5Translations'),
         'type' => 'checkbox',
         'section' => 'section_color',
         'settings' => 'theme_color_invert_enable',
@@ -185,7 +184,7 @@ function panel($wp_customize)
 
     //Fonts
     $wp_customize->add_section('section_font', array(
-        'title' => esc_html__('Polices'),
+        'title' => esc_html__('Fonts', 'wpb5Translations'),
         'priority' => 11,
         'panel' => 'theme_options_panel',
     ));
@@ -197,7 +196,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_font_1', array(
-        'label' => esc_html__('Police Texte'),
+        'label' => esc_html__('Text Font', 'wpb5Translations'),
         'section' => 'section_font',
         'priority' => 12,
         'type' => 'select',
@@ -211,7 +210,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('theme_font_2', array(
-        'label' => esc_html__('Police Titre'),
+        'label' => esc_html__('Title Font', 'wpb5Translations'),
         'section' => 'section_font',
         'priority' => 11,
         'type' => 'select',
@@ -221,7 +220,7 @@ function panel($wp_customize)
 
     //Jumbotron
     $wp_customize->add_section('section_jumbotron', array(
-        'title' => esc_html__('Jumbotron'),
+        'title' => esc_html__('Jumbotron', 'wpb5Translations'),
         'priority' => 20,
         'panel' => 'theme_options_panel',
     ));
@@ -233,7 +232,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('jumbotron_text_1', array(
-        'label' => esc_html__('Texte du titre principal'),
+        'label' => esc_html__('Text of the main title', 'wpb5Translations'),
         'type' => 'text',
         'section' => 'section_jumbotron',
         'settings' => 'jumbotron_text_1',
@@ -247,8 +246,8 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('jumbotron_text_1_enable', array(
-        'label' => esc_html__('Enable'),
-        'description' => esc_html__('Activer/Désactiver le titre principal personnalisé'),
+        'label' => esc_html__('Enable', 'wpb5Translations'),
+        'description' => esc_html__('Enable/Disable custom main title', 'wpb5Translations'),
         'type' => 'checkbox',
         'section' => 'section_jumbotron',
         'settings' => 'jumbotron_text_1_enable',
@@ -262,7 +261,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('jumbotron_text_2', array(
-        'label' => esc_html__('Texte du sous-titre'),
+        'label' => esc_html__('Subtitle text', 'wpb5Translations'),
         'type' => 'text',
         'section' => 'section_jumbotron',
         'settings' => 'jumbotron_text_2',
@@ -276,8 +275,8 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('jumbotron_text_2_enable', array(
-        'label' => esc_html__('Enable'),
-        'description' => esc_html__('Activer/Désactiver le sous-titre personnalisé'),
+        'label' => esc_html__('Enable', 'wpb5Translations'),
+        'description' => esc_html__('Enable/Disable custom subtitle', 'wpb5Translations'),
         'type' => 'checkbox',
         'section' => 'section_jumbotron',
         'settings' => 'jumbotron_text_2_enable',
@@ -287,7 +286,7 @@ function panel($wp_customize)
 
     //Footer
     $wp_customize->add_section('section_footer', array(
-        'title' => esc_html__('Footer'),
+        'title' => esc_html__('Footer', 'wpb5Translations'),
         'priority' => 30,
         'panel' => 'theme_options_panel',
     ));
@@ -299,7 +298,7 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('footer_text', array(
-        'label' => esc_html__('Copyright / Texte de Pied de page'),
+        'label' => esc_html__('Footer Copyright / Text', 'wpb5Translations'),
         'type' => 'text',
         'section' => 'section_footer',
         'settings' => 'footer_copyright',
@@ -313,8 +312,8 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('footer_enable', array(
-        'label' => esc_html__('Enable'),
-        'description' => esc_html__('Activer/Désactiver le texte personnalisé de pied de page'),
+        'label' => esc_html__('Enable', 'wpb5Translations'),
+        'description' => esc_html__('Enable/Disable custom footer text', 'wpb5Translations'),
         'type' => 'checkbox',
         'section' => 'section_footer',
         'settings' => 'footer_enable',
@@ -323,7 +322,7 @@ function panel($wp_customize)
 
     //Contact Modal
     $wp_customize->add_section('section_contact_modal', array(
-        'title' => esc_html__('Contact Modal'),
+        'title' => esc_html__('Contact Modal', 'wpb5Translations'),
         'priority' => 30,
         'panel' => 'theme_options_panel',
     ));
@@ -335,14 +334,44 @@ function panel($wp_customize)
     ));
 
     $wp_customize->add_control('contact_modal_enable', array(
-        'label' => esc_html__('Activer'),
-        'description' => esc_html__('Activer/Désactiver le bouton de contact'),
+        'label' => esc_html__('Enable', 'wpb5Translations'),
+        'description' => esc_html__('Enable/Disable the contact button', 'wpb5Translations'),
         'type' => 'checkbox',
         'section' => 'section_contact_modal',
         'settings' => 'contact_modal_enable',
         'priority' => 10,
     ));
-    
+
+    $wp_customize->add_setting('contact_modal_title', array(
+        'default' => 'Contact',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('contact_modal_title', array(
+        'label' => esc_html__('Customize the button title', 'wpb5Translations'),
+        //'description' => esc_html__('Enable/Disable the contact button', 'wpb5Translations'),
+        'type' => 'text',
+        'section' => 'section_contact_modal',
+        'settings' => 'contact_modal_title',
+        'priority' => 15,
+    ));
+
+    $wp_customize->add_setting('contact_modal_title_enable', array(
+        'default' => 0,
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('contact_modal_title_enable', array(
+        'label' => esc_html__('Enable', 'wpb5Translations'),
+        'description' => esc_html__('Enable/Disable the custom contact button Text', 'wpb5Translations'),
+        'type' => 'checkbox',
+        'section' => 'section_contact_modal',
+        'settings' => 'contact_modal_title_enable',
+        'priority' => 16,
+    ));
+
     if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
         $wp_customize->add_setting('contact_modal_shortcode', array(
             'default' => '',
@@ -351,8 +380,8 @@ function panel($wp_customize)
         ));
 
         $wp_customize->add_control('contact_modal_shortcode', array(
-            'label' => esc_html__('Shortcode du formulaire Contact 7'),
-            'description' => esc_html__('Veuillez utiliser le template fourni dans la documentation, sinon il ne fonctionnera pas'),
+            'label' => esc_html__('Shortcode of the Contact 7 form', 'wpb5Translations'),
+            'description' => esc_html__('Please use the template provided in the documentation, otherwise it will not work', 'wpb5Translations'),
             'type' => 'text',
             'section' => 'section_contact_modal',
             'settings' => 'contact_modal_shortcode',
@@ -366,8 +395,8 @@ function panel($wp_customize)
         ));
 
         $wp_customize->add_control('contact_modal_link_enable', array(
-            'label' => esc_html__('Activer'),
-            'description' => esc_html__("Activer/Désactiver la possibilité d'utiliser un lien personnalisé (désactive le modal)"),
+            'label' => esc_html__('Enable', 'wpb5Translations'),
+            'description' => esc_html__("Enable/Disable the ability to use a custom link? (disable the modal)", 'wpb5Translations'),
             'type' => 'checkbox',
             'section' => 'section_contact_modal',
             'settings' => 'contact_modal_link_enable',
@@ -376,13 +405,13 @@ function panel($wp_customize)
     }
 
     $wp_customize->add_setting('contact_modal_link', array(
-        'default' => '',
+        'default' => 'https://duckduckgo.com/',
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw'
     ));
 
     $wp_customize->add_control('contact_modal_link', array(
-        'label' => esc_html__('Lien personnalisé du bouton Contact'),
+        'label' => esc_html__('Custom link of the Contact button', 'wpb5Translations'),
         'type' => 'text',
         'section' => 'section_contact_modal',
         'settings' => 'contact_modal_link',
@@ -396,7 +425,7 @@ add_action('customize_register', 'panel');
 
 
 //
-//Activer le Custom CSS pour les couleurs (Fonctionne partiellement)
+//Activer le Custom CSS pour les couleurs 
 //
 function custom_color_theme($custom_theme)
 {
@@ -470,7 +499,7 @@ function custom_css_color_output()
     if (get_theme_mod('theme_color_invert_enable')) {
         echo '--theme_color_invert_enable: invert(1);';
     }
-    echo'}</style>';
+    echo '}</style>';
 }
 add_action('wp_head', 'custom_css_color_output');
 

@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-05-31 11:53+0200\n"
+"PO-Revision-Date: 2021-05-31 11:53+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: esc_html__\n"
+"X-Poedit-SearchPath-0: functions-wp_customize.php\n"
+
+#: functions-wp_customize.php:11
+msgid "Theme Options"
+msgstr ""
+
+#: functions-wp_customize.php:12
+msgid "Settings for Bootstrap5FullWidth"
+msgstr ""
+
+#: functions-wp_customize.php:19
+msgid "Themes"
+msgstr ""
+
+#: functions-wp_customize.php:31
+msgid "Color Theme"
+msgstr ""
+
+#: functions-wp_customize.php:46
+msgid "Apply Colors"
+msgstr ""
+
+#: functions-wp_customize.php:47
+msgid ""
+"Enable this option to confirm appliquation a theme. Changing theme will "
+"override the colors settings."
+msgstr ""
+
+#: functions-wp_customize.php:61
+msgid "Fonts Theme"
+msgstr ""
+
+#: functions-wp_customize.php:76
+msgid "Apply Fonts"
+msgstr ""
+
+#: functions-wp_customize.php:77
+msgid ""
+"Enable this option to confirm appliquation a theme. Change theme will "
+"override the fonts settings."
+msgstr ""
+
+#: functions-wp_customize.php:87
+msgid "Colors"
+msgstr ""
+
+#: functions-wp_customize.php:99
+msgid "Color 1"
+msgstr ""
+
+#: functions-wp_customize.php:112
+msgid "Color 2"
+msgstr ""
+
+#: functions-wp_customize.php:125
+msgid "Color 3"
+msgstr ""
+
+#: functions-wp_customize.php:138
+msgid "Color 4"
+msgstr ""
+
+#: functions-wp_customize.php:151
+msgid "Color 5"
+msgstr ""
+
+#: functions-wp_customize.php:164
+msgid "Color 6"
+msgstr ""
+
+#: functions-wp_customize.php:177
+msgid "Invert the colors of logos"
+msgstr ""
+
+#: functions-wp_customize.php:187
+msgid "Fonts"
+msgstr ""
+
+#: functions-wp_customize.php:199
+msgid "Text Font"
+msgstr ""
+
+#: functions-wp_customize.php:213
+msgid "Title Font"
+msgstr ""
+
+#: functions-wp_customize.php:223
+msgid "Jumbotron"
+msgstr ""
+
+#: functions-wp_customize.php:235
+msgid "Text of the main title"
+msgstr ""
+
+#: functions-wp_customize.php:249 functions-wp_customize.php:278
+#: functions-wp_customize.php:315 functions-wp_customize.php:337
+#: functions-wp_customize.php:368
+msgid "Enable"
+msgstr ""
+
+#: functions-wp_customize.php:250
+msgid "Enable/Disable custom main title"
+msgstr ""
+
+#: functions-wp_customize.php:264
+msgid "Subtitle text"
+msgstr ""
+
+#: functions-wp_customize.php:279
+msgid "Enable/Disable custom subtitle"
+msgstr ""
+
+#: functions-wp_customize.php:289
+msgid "Footer"
+msgstr ""
+
+#: functions-wp_customize.php:301
+msgid "Footer Copyright / Text"
+msgstr ""
+
+#: functions-wp_customize.php:316
+msgid "Enable/Disable custom footer text"
+msgstr ""
+
+#: functions-wp_customize.php:325
+msgid "Contact Modal"
+msgstr ""
+
+#: functions-wp_customize.php:338
+msgid "Enable/Disable the contact button"
+msgstr ""
+
+#: functions-wp_customize.php:353
+msgid "Shortcode of the Contact 7 form"
+msgstr ""
+
+#: functions-wp_customize.php:354
+msgid ""
+"Please use the template provided in the documentation, otherwise it will not "
+"work"
+msgstr ""
+
+#: functions-wp_customize.php:369
+msgid "Enable/Disable the ability to use a custom link? (disable the modal)"
+msgstr ""
+
+#: functions-wp_customize.php:384
+msgid "Custom link of the Contact button"
+msgstr ""
