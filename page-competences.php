@@ -37,7 +37,7 @@
                 <div class="col-lg-4 bulletcomponent">
                     <div class="rounded-circle">
                         <?php $image = get_sub_field('logo'); ?>
-                        <img width="210" height="210" src="<?php echo esc_url($image['url']); ?>" data-holder-rendered="true">
+                        <img width="210" height="210" alt="<?php the_sub_field('competence'); ?>" src="<?php echo esc_url($image['url']); ?>" data-holder-rendered="true">
                     </div>
                     <p><?php the_sub_field('competence'); ?></p>
                 </div>

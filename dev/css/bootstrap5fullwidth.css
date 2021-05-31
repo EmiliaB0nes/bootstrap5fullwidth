@@ -7508,7 +7508,9 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
   --color6: #ffffff;
   --theme_color_invert_enable: invert(0);
   --font1: "Source Sans Pro", sans-serif;
-  --font2: "Bebas Neue", cursive; }
+  --font2: "Bebas Neue", cursive;
+  --font_padding_bottom: 
+; }
 
 /*******************************************************************************
   * Sidebar                                                                    *
@@ -7654,13 +7656,13 @@ body {
 
 .titleseparationarea {
   padding-top: calc(1.375rem + 1.5vw);
-  padding-bottom: calc(1.33rem + 0.96vw); }
+  padding-bottom: calc(1.375rem + 1.5vw); }
   @media (min-width: 1200px) {
     .titleseparationarea {
       padding-top: 2.5rem; } }
   @media (min-width: 1200px) {
     .titleseparationarea {
-      padding-bottom: 2.05rem; } }
+      padding-bottom: 2.5rem; } }
 
 .titleseparationarea h2, .titleseparationarea .h2 {
   margin-bottom: 0px; }

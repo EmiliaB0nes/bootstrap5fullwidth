@@ -32,6 +32,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 	--font1: "Source Sans Pro", sans-serif;
 	--font2: "Bebas Neue", cursive;
+	--font_padding_bottom: 
 }
 
 /*******************************************************************************
@@ -201,7 +202,8 @@ body {
 
 .titleseparationarea {
 	@include padding-top(2.5rem);
-	@include padding-bottom(2.05rem);
+	//@include padding-bottom(2.05rem);
+	@include padding-bottom(2.5rem);
 }
 
 .titleseparationarea h2 {

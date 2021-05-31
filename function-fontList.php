@@ -8,8 +8,8 @@ function fontList()
     $fontSettings = array(
         'bebas_neue' => array(
             "name" => __('Bebas Neue'),
-            "cssName" => "'Bebas Neue', cursive",
-            "url" => "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap",
+            "cssName" => "bebas-neue, sans-serif",
+            "url" => "https://use.typekit.net/cfj0bmv.css",
         ),
         'source_sans_pro' => array(
             "name" => __('Source Sans Pro'),
