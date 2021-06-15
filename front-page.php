@@ -9,8 +9,8 @@
                     <?php if (get_theme_mod('jumbotron_text_1_enable')) : ?>
                         <?php echo get_theme_mod('jumbotron_text_1'); ?>
                     <?php else : ?>
-                        <?php if (get_field('nom')) : ?>
-                            <?php the_field('nom'); ?>
+                        <?php if (carbon_get_the_post_meta('crb_front_main_title')) : ?>
+                            <?php echo carbon_get_the_post_meta('crb_front_main_title'); ?>
                         <?php endif; ?>
                     <?php endif; ?>
 
@@ -20,32 +20,37 @@
                 <p class="text-center"><?php if (get_theme_mod('jumbotron_text_2_enable')) : ?>
                         <?php echo get_theme_mod('jumbotron_text_2'); ?>
                     <?php else : ?>
-                        <?php if (get_field('sous-titre')) : ?>
-                            <?php the_field('sous-titre'); ?>
+                        <?php if (carbon_get_the_post_meta('crb_subtitle')) : ?>
+                            <?php echo carbon_get_the_post_meta('crb_subtitle'); ?>
                         <?php endif; ?>
                     <?php endif; ?>
             </div>
         </div>
     </div>
-    <?php if (get_field('afficher_competences')) : ?>
+    <?php if (carbon_get_the_post_meta('crb_show_skills')) : ?>
         <div class="container-fluid titleseparationarea">
 
-            <h2 class="text-center align-content-center "><?php if (get_field('titre_competences')) : ?>
-                    <?php the_field('titre_competences'); ?>
+            <h2 class="text-center align-content-center "><?php if (carbon_get_the_post_meta('crb_skills_area_title')) : ?>
+                    <?php echo carbon_get_the_post_meta('crb_skills_area_title'); ?>
                 <?php endif; ?></h2>
 
         </div>
 
         <?php
-        //Boucle de Contenu flexible pour la version pro d'ACF 
-        if (have_rows('liste_competences')) : ?>
+        //Boucle de Contenu flexible 
+
+        $sections = carbon_get_the_post_meta('crb_skill_slider');
+
+
+        if ($sections) : ?>
 
             <div class="container-xxl  contentcolor1 bulletarea">
+                <?php //echo var_dump($sections); ?>
 
                 <div class="row text-center ">
                     <?php
                     $i = 0;
-                    while (have_rows('liste_competences')) : the_row(); ?>
+                    foreach ($sections as $section) { ?>
                         <?php if ($i % 3 == 0) : ?>
                 </div>
                 <div class="row text-center ">
@@ -53,17 +58,15 @@
                         endif;
                         $i++;
                 ?>
-                <?php if (get_row_layout() == 'competences') : ?>
                     <div class="col-lg-4 bulletcomponent">
                         <div class="rounded-circle">
-                            <?php $image = get_sub_field('logo'); ?>
-                            <img width="210" height="210" alt="<?php the_sub_field('competence'); ?>" src="<?php echo esc_url($image['url']); ?>" data-holder-rendered="true">
+                            <img width="210" height="210" alt="<?php echo wpautop( $section['skill_title'] ); ?>" src="<?php echo wp_get_attachment_image_url( $section['skill_logo'], 'full' ); ?>" data-holder-rendered="true">
                         </div>
-                        <p><?php the_sub_field('competence'); ?></p>
+                        <p><?php echo wpautop( $section['skill_title'] ); ?></p>
                     </div>
 
-                <?php endif; ?>
-            <?php endwhile; ?>
+                
+            <?php } ?>
         <?php endif; ?>
                 </div>
             </div>

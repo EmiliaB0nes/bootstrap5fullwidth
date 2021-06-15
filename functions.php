@@ -6,7 +6,8 @@ $roots_includes = array(
     './functions-wp_customize.php',
     './function-theme_settings_page.php',
     './function-theme_presets.php',
-    './function-fontList.php'
+    './function-fontList.php',
+    './function-carbon_fields.php'
 );
 
 foreach ($roots_includes as $file) {
@@ -66,6 +67,4 @@ add_action('wp_enqueue_scripts', 'load_jquery');
 
 // add_action("init", "wpm_custom_post_type", 0);
 
-load_theme_textdomain( 'wpb5Translations', get_template_directory() . '/lang' );
-
-
+load_theme_textdomain('wpb5Translations', get_template_directory() . '/lang');

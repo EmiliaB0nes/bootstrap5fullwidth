@@ -11,21 +11,22 @@
     </div>
     <div class="container-fluid titleseparationarea">
 
-        <h2 class="text-center align-content-center "><?php if (get_field('titre_groupe_1')) : ?>
-                <?php the_field('titre_groupe_1'); ?>
+        <h2 class="text-center align-content-center "><?php if (carbon_get_the_post_meta('crb_competence_slider1_title')) : ?>
+                <?php echo carbon_get_the_post_meta('crb_competence_slider1_title'); ?>
             <?php endif; ?></h2>
 
     </div>
     <?php
-    //Boucle de Contenu flexible pour la version pro d'ACF 
-    if (have_rows('liste_groupe_1')) : ?>
+    //Boucle de Contenu flexible 
+
+    $sections = carbon_get_the_post_meta('crb_competence_slider1');
+    if ($sections) : ?>
 
         <div class="container-xxl  contentcolor1 bulletarea">
-
             <div class="row text-center ">
                 <?php
                 $i = 0;
-                while (have_rows('liste_groupe_1')) : the_row(); ?>
+                foreach ($sections as $section) { ?>
                     <?php if ($i % 3 == 0) : ?>
             </div>
             <div class="row text-center ">
@@ -33,37 +34,37 @@
                     endif;
                     $i++;
             ?>
-            <?php if (get_row_layout() == 'competence') : ?>
-                <div class="col-lg-4 bulletcomponent">
-                    <div class="rounded-circle">
-                        <?php $image = get_sub_field('logo'); ?>
-                        <img width="210" height="210" alt="<?php the_sub_field('competence'); ?>" src="<?php echo esc_url($image['url']); ?>" data-holder-rendered="true">
-                    </div>
-                    <p><?php the_sub_field('competence'); ?></p>
-                </div>
 
-            <?php endif; ?>
-        <?php endwhile; ?>
+            <div class="col-lg-4 bulletcomponent">
+                <div class="rounded-circle">
+                    <img width="210" height="210" alt="<?php echo wpautop($section['skill_title']); ?>" src="<?php echo wp_get_attachment_image_url($section['skill_logo'], 'full'); ?>" data-holder-rendered="true">
+                </div>
+                <p><?php echo wpautop($section['skill_title']); ?></p>
+            </div>
+
+
+        <?php } ?>
     <?php endif; ?>
             </div>
         </div>
         <div class="container-fluid titleseparationarea">
 
-            <h2 class="text-center align-content-center "><?php if (get_field('titre_groupe_2')) : ?>
-                    <?php the_field('titre_groupe_2'); ?>
+            <h2 class="text-center align-content-center "><?php if (carbon_get_the_post_meta('crb_competence_slider2_title')) : ?>
+                    <?php echo carbon_get_the_post_meta('crb_competence_slider2_title') ?>
                 <?php endif; ?></h2>
 
         </div>
         <?php
-        //Boucle de Contenu flexible pour la version pro d'ACF 
-        if (have_rows('liste_groupe_2')) : ?>
+        //Boucle de Contenu flexible
+        $sections = carbon_get_the_post_meta('crb_competence_slider2');
+        if ($sections) : ?>
 
             <div class="container-xxl  contentcolor1 bulletarea">
 
                 <div class="row text-center ">
                     <?php
                     $i = 0;
-                    while (have_rows('liste_groupe_2')) : the_row(); ?>
+                    foreach ($sections as $section) { ?>
                         <?php if ($i % 3 == 0) : ?>
                 </div>
                 <div class="row text-center ">
@@ -71,17 +72,16 @@
                         endif;
                         $i++;
                 ?>
-                <?php if (get_row_layout() == 'competence') : ?>
-                    <div class="col-lg-4 bulletcomponent">
-                        <div class="rounded-circle">
-                            <?php $image = get_sub_field('logo'); ?>
-                            <img width="210" height="210" src="<?php echo esc_url($image['url']); ?>" data-holder-rendered="true">
-                        </div>
-                        <p><?php the_sub_field('competence'); ?></p>
-                    </div>
 
-                <?php endif; ?>
-            <?php endwhile; ?>
+                <div class="col-lg-4 bulletcomponent">
+                    <div class="rounded-circle">
+                        <img width="210" height="210" alt="<?php echo wpautop($section['skill_title']); ?>" src="<?php echo wp_get_attachment_image_url($section['skill_logo'], 'full'); ?>" data-holder-rendered="true">
+                    </div>
+                    <p><?php echo wpautop($section['skill_title']); ?></p>
+                </div>
+
+
+            <?php } ?>
         <?php endif; ?>
                 </div>
             </div>
