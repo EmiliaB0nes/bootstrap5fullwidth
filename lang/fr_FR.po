@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-05-31 15:02+0200\n"
-"PO-Revision-Date: 2021-05-31 15:03+0200\n"
+"POT-Creation-Date: 2021-06-17 15:44+0200\n"
+"PO-Revision-Date: 2021-06-17 15:44+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,6 +17,76 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: dev\n"
 "X-Poedit-SearchPathExcluded-1: js\n"
 "X-Poedit-SearchPathExcluded-2: css\n"
+"X-Poedit-SearchPathExcluded-3: vendor\n"
+
+#: function-carbon_fields.php:22
+msgid "Front Page Options"
+msgstr "Options de la page d’accueil"
+
+#: function-carbon_fields.php:25
+msgid "Main Title"
+msgstr "Titre Principal"
+
+#: function-carbon_fields.php:26 function-carbon_fields.php:70
+#: function-carbon_fields.php:80
+msgid "My Title"
+msgstr "Mon Titre"
+
+#: function-carbon_fields.php:28
+msgid "Subtitle"
+msgstr "Titre Secondaire"
+
+#: function-carbon_fields.php:29
+msgid "My Subtitle"
+msgstr "Mon titre secondaire"
+
+#: function-carbon_fields.php:30
+msgid "Show skills"
+msgstr "Montrer les compétences"
+
+#: function-carbon_fields.php:32
+msgid "Skills area title"
+msgstr "Titre de la zone de compétences"
+
+#: function-carbon_fields.php:40
+msgid "Skills List"
+msgstr "Liste de compétences"
+
+#: function-carbon_fields.php:48
+msgid "Skill"
+msgstr "Compétence"
+
+#: function-carbon_fields.php:50
+msgid "Skill Logo"
+msgstr "Logo de la compétence"
+
+#: function-carbon_fields.php:62
+msgid "Competence Page Options"
+msgstr "Options de la page de compétences"
+
+#: function-carbon_fields.php:69
+msgid "List 1 Title"
+msgstr "Titre de la liste 1"
+
+#: function-carbon_fields.php:72
+msgid "Competence List 1"
+msgstr "Liste de compétences 1"
+
+#: function-carbon_fields.php:74 function-carbon_fields.php:84
+msgid "Competence title"
+msgstr "Compétence"
+
+#: function-carbon_fields.php:76 function-carbon_fields.php:86
+msgid "Competence Logo"
+msgstr "Logo"
+
+#: function-carbon_fields.php:79
+msgid "List 2 Title"
+msgstr "Titre de la liste 2"
+
+#: function-carbon_fields.php:82
+msgid "Competence List 2"
+msgstr "Liste de compétences 2"
 
 #: functions-wp_customize.php:11
 msgid "Theme Options"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-05-31 11:53+0200\n"
-"PO-Revision-Date: 2021-05-31 11:53+0200\n"
+"POT-Creation-Date: 2021-06-17 15:50+0200\n"
+"PO-Revision-Date: 2021-06-17 15:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -13,7 +13,80 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: esc_html__\n"
-"X-Poedit-SearchPath-0: functions-wp_customize.php\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: dev\n"
+"X-Poedit-SearchPathExcluded-1: js\n"
+"X-Poedit-SearchPathExcluded-2: css\n"
+"X-Poedit-SearchPathExcluded-3: vendor\n"
+
+#: function-carbon_fields.php:22
+msgid "Front Page Options"
+msgstr ""
+
+#: function-carbon_fields.php:25
+msgid "Main Title"
+msgstr ""
+
+#: function-carbon_fields.php:26 function-carbon_fields.php:70
+#: function-carbon_fields.php:80
+msgid "My Title"
+msgstr ""
+
+#: function-carbon_fields.php:28
+msgid "Subtitle"
+msgstr ""
+
+#: function-carbon_fields.php:29
+msgid "My Subtitle"
+msgstr ""
+
+#: function-carbon_fields.php:30
+msgid "Show skills"
+msgstr ""
+
+#: function-carbon_fields.php:32
+msgid "Skills area title"
+msgstr ""
+
+#: function-carbon_fields.php:40
+msgid "Skills List"
+msgstr ""
+
+#: function-carbon_fields.php:48
+msgid "Skill"
+msgstr ""
+
+#: function-carbon_fields.php:50
+msgid "Skill Logo"
+msgstr ""
+
+#: function-carbon_fields.php:62
+msgid "Competence Page Options"
+msgstr ""
+
+#: function-carbon_fields.php:69
+msgid "List 1 Title"
+msgstr ""
+
+#: function-carbon_fields.php:72
+msgid "Competence List 1"
+msgstr ""
+
+#: function-carbon_fields.php:74 function-carbon_fields.php:84
+msgid "Competence title"
+msgstr ""
+
+#: function-carbon_fields.php:76 function-carbon_fields.php:86
+msgid "Competence Logo"
+msgstr ""
+
+#: function-carbon_fields.php:79
+msgid "List 2 Title"
+msgstr ""
+
+#: function-carbon_fields.php:82
+msgid "Competence List 2"
+msgstr ""
 
 #: functions-wp_customize.php:11
 msgid "Theme Options"
@@ -109,7 +182,7 @@ msgstr ""
 
 #: functions-wp_customize.php:249 functions-wp_customize.php:278
 #: functions-wp_customize.php:315 functions-wp_customize.php:337
-#: functions-wp_customize.php:368
+#: functions-wp_customize.php:367 functions-wp_customize.php:398
 msgid "Enable"
 msgstr ""
 
@@ -145,20 +218,28 @@ msgstr ""
 msgid "Enable/Disable the contact button"
 msgstr ""
 
-#: functions-wp_customize.php:353
+#: functions-wp_customize.php:352
+msgid "Customize the button title"
+msgstr ""
+
+#: functions-wp_customize.php:368
+msgid "Enable/Disable the custom contact button Text"
+msgstr ""
+
+#: functions-wp_customize.php:383
 msgid "Shortcode of the Contact 7 form"
 msgstr ""
 
-#: functions-wp_customize.php:354
+#: functions-wp_customize.php:384
 msgid ""
 "Please use the template provided in the documentation, otherwise it will not "
 "work"
 msgstr ""
 
-#: functions-wp_customize.php:369
+#: functions-wp_customize.php:399
 msgid "Enable/Disable the ability to use a custom link? (disable the modal)"
 msgstr ""
 
-#: functions-wp_customize.php:384
+#: functions-wp_customize.php:414
 msgid "Custom link of the Contact button"
 msgstr ""
