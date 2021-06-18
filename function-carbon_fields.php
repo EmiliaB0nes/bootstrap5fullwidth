@@ -28,7 +28,7 @@ function crb_front_page()
             Field::make('text', 'crb_subtitle', esc_html__('Subtitle', 'wpb5Translations'))
             ->set_default_value( esc_html__('My Subtitle', 'wpb5Translations')),
             Field::make('checkbox', 'crb_show_skills', esc_html__('Show skills', 'wpb5Translations'))
-            ->set_default_value( true ),
+            ->set_default_value( false ),
             Field::make('text', 'crb_skills_area_title', esc_html__('Skills area title', 'wpb5Translations'))
                 ->set_conditional_logic(array(
                     array(
@@ -56,6 +56,9 @@ function crb_front_page()
         ));
 }
 
+
+
+// Competence page
 add_action('carbon_fields_register_fields', 'crb_competence_page');
 function crb_competence_page()
 {
@@ -86,8 +89,6 @@ function crb_competence_page()
                     Field::make('image', 'skill_logo', esc_html__('Competence Logo', 'wpb5Translations'))
                     ->set_required( true ),
                 )),
-
-
 
         ));
 }
