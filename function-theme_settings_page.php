@@ -1,6 +1,6 @@
 <?php
 
-
+// Not used anymore
 
 function theme_settings_page()
 {
