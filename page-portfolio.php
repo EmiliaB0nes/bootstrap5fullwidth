@@ -28,7 +28,9 @@
             <div class="container-xxl contentcolor1 textarea1 portfolioArea">
                 <div class="row">
                     <div class="col-12">
+                    <?php if(has_post_thumbnail($mypost->ID)){ ?>
                         <img class="portfolioImg" src="<?php echo the_post_thumbnail_url($mypost->ID); ?>">
+                        <?php } ?>
                         
                             <?php echo the_content(); ?>
                         
