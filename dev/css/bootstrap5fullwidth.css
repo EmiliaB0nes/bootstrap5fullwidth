@@ -7754,6 +7754,9 @@ body {
   padding-left: 0px;
   padding-right: 0px; }
 
+.portfolioArea a {
+  color: var(--color3); }
+
 footer p {
   margin-bottom: 0px; }
 
@@ -7876,6 +7879,15 @@ body p {
   @media (min-width: 1200px) {
     .textarea1 h3, .textarea1 .h3 {
       font-size: 2.2rem; } }
+
+.textarea1 ul {
+  font-size: calc(1.315rem + 0.78vw); }
+  @media (min-width: 1200px) {
+    .textarea1 ul {
+      font-size: 1.9rem; } }
+
+.textarea1 li {
+  list-style-image: url("../icons/caret-right-fill-white.svg"); }
 
 .textarea1 p {
   font-family: var(--font1);

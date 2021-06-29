@@ -83,103 +83,107 @@ function panel($wp_customize)
 
 
     //Colors
-    $wp_customize->add_section('section_color', array(
-        'title' => esc_html__('Colors', 'wpb5Translations'),
-        'priority' => 10,
-        'panel' => 'theme_options_panel',
-    ));
+    // Ne fonctionne plus à cause d'un probleme de chargement d'une librairie Wordpress Native
+    // Uncaught TypeError: picker.val(...).wpColorPicker is not a function
 
-    $wp_customize->add_setting('theme_color_1', array(
-        'default' => '#292320',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_hex_color'
-    ));
 
-    $wp_customize->add_control('theme_color_1', array(
-        'label' => esc_html__('Color 1', 'wpb5Translations'),
-        'section' => 'section_color',
-        'priority' => 10,
-        'type' => 'color',
-    ));
+    // $wp_customize->add_section('section_color', array(
+    //     'title' => esc_html__('Colors', 'wpb5Translations'),
+    //     'priority' => 10,
+    //     'panel' => 'theme_options_panel',
+    // ));
 
-    $wp_customize->add_setting('theme_color_2', array(
-        'default' => '#487b89',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_hex_color'
-    ));
+    // $wp_customize->add_setting('theme_color_1', array(
+    //     'default' => '#292320',
+    //     'transport' => 'refresh',
+    //     'sanitize_callback' => 'sanitize_hex_color'
+    // ));
 
-    $wp_customize->add_control('theme_color_2', array(
-        'label' => esc_html__('Color 2', 'wpb5Translations'),
-        'section' => 'section_color',
-        'priority' => 10,
-        'type' => 'color',
-    ));
+    // $wp_customize->add_control('theme_color_1', array(
+    //     'label' => esc_html__('Color 1', 'wpb5Translations'),
+    //     'section' => 'section_color',
+    //     'priority' => 10,
+    //     'type' => 'color',
+    // ));
 
-    $wp_customize->add_setting('theme_color_3', array(
-        'default' => '#f4d58d',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_hex_color'
-    ));
+    // $wp_customize->add_setting('theme_color_2', array(
+    //     'default' => '#487b89',
+    //     'transport' => 'refresh',
+    //     'sanitize_callback' => 'sanitize_hex_color'
+    // ));
 
-    $wp_customize->add_control('theme_color_3', array(
-        'label' => esc_html__('Color 3', 'wpb5Translations'),
-        'section' => 'section_color',
-        'priority' => 10,
-        'type' => 'color',
-    ));
+    // $wp_customize->add_control('theme_color_2', array(
+    //     'label' => esc_html__('Color 2', 'wpb5Translations'),
+    //     'section' => 'section_color',
+    //     'priority' => 10,
+    //     'type' => 'color',
+    // ));
 
-    $wp_customize->add_setting('theme_color_4', array(
-        'default' => '#eec190',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_hex_color'
-    ));
+    // $wp_customize->add_setting('theme_color_3', array(
+    //     'default' => '#f4d58d',
+    //     'transport' => 'refresh',
+    //     'sanitize_callback' => 'sanitize_hex_color'
+    // ));
 
-    $wp_customize->add_control('theme_color_4', array(
-        'label' => esc_html__('Color 4', 'wpb5Translations'),
-        'section' => 'section_color',
-        'priority' => 10,
-        'type' => 'color',
-    ));
+    // $wp_customize->add_control('theme_color_3', array(
+    //     'label' => esc_html__('Color 3', 'wpb5Translations'),
+    //     'section' => 'section_color',
+    //     'priority' => 10,
+    //     'type' => 'color',
+    // ));
 
-    $wp_customize->add_setting('theme_color_5', array(
-        'default' => '#cc4e1f',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_hex_color'
-    ));
+    // $wp_customize->add_setting('theme_color_4', array(
+    //     'default' => '#eec190',
+    //     'transport' => 'refresh',
+    //     'sanitize_callback' => 'sanitize_hex_color'
+    // ));
 
-    $wp_customize->add_control('theme_color_5', array(
-        'label' => esc_html__('Color 5', 'wpb5Translations'),
-        'section' => 'section_color',
-        'priority' => 10,
-        'type' => 'color',
-    ));
+    // $wp_customize->add_control('theme_color_4', array(
+    //     'label' => esc_html__('Color 4', 'wpb5Translations'),
+    //     'section' => 'section_color',
+    //     'priority' => 10,
+    //     'type' => 'color',
+    // ));
 
-    $wp_customize->add_setting('theme_color_6', array(
-        'default' => '#ffffff',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_hex_color'
-    ));
+    // $wp_customize->add_setting('theme_color_5', array(
+    //     'default' => '#cc4e1f',
+    //     'transport' => 'refresh',
+    //     'sanitize_callback' => 'sanitize_hex_color'
+    // ));
 
-    $wp_customize->add_control('theme_color_6', array(
-        'label' => esc_html__('Color 6', 'wpb5Translations'),
-        'section' => 'section_color',
-        'priority' => 10,
-        'type' => 'color',
-    ));
+    // $wp_customize->add_control('theme_color_5', array(
+    //     'label' => esc_html__('Color 5', 'wpb5Translations'),
+    //     'section' => 'section_color',
+    //     'priority' => 10,
+    //     'type' => 'color',
+    // ));
 
-    $wp_customize->add_setting('theme_color_invert_enable', array(
-        'default' => 0,
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_text_field'
-    ));
+    // $wp_customize->add_setting('theme_color_6', array(
+    //     'default' => '#ffffff',
+    //     'transport' => 'refresh',
+    //     'sanitize_callback' => 'sanitize_hex_color'
+    // ));
 
-    $wp_customize->add_control('theme_color_invert_enable', array(
-        'label' => esc_html__('Invert the colors of logos', 'wpb5Translations'),
-        'type' => 'checkbox',
-        'section' => 'section_color',
-        'settings' => 'theme_color_invert_enable',
-        'priority' => 10,
-    ));
+    // $wp_customize->add_control('theme_color_6', array(
+    //     'label' => esc_html__('Color 6', 'wpb5Translations'),
+    //     'section' => 'section_color',
+    //     'priority' => 10,
+    //     'type' => 'color',
+    // ));
+
+    // $wp_customize->add_setting('theme_color_invert_enable', array(
+    //     'default' => 0,
+    //     'transport' => 'refresh',
+    //     'sanitize_callback' => 'sanitize_text_field'
+    // ));
+
+    // $wp_customize->add_control('theme_color_invert_enable', array(
+    //     'label' => esc_html__('Invert the colors of logos', 'wpb5Translations'),
+    //     'type' => 'checkbox',
+    //     'section' => 'section_color',
+    //     'settings' => 'theme_color_invert_enable',
+    //     'priority' => 10,
+    // ));
 
 
     //Fonts
@@ -371,38 +375,39 @@ function panel($wp_customize)
         'settings' => 'contact_modal_title_enable',
         'priority' => 16,
     ));
+    // Ne fonctionne pas sur de nouvelles installations
+    // if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
+    //
+    $wp_customize->add_setting('contact_modal_shortcode', array(
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
 
-    if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
-        $wp_customize->add_setting('contact_modal_shortcode', array(
-            'default' => '',
-            'transport' => 'refresh',
-            'sanitize_callback' => 'sanitize_text_field'
-        ));
+    $wp_customize->add_control('contact_modal_shortcode', array(
+        'label' => esc_html__('Shortcode of the Contact 7 form', 'wpb5Translations'),
+        'description' => esc_html__('Please use the template provided in the documentation, otherwise it will not work', 'wpb5Translations'),
+        'type' => 'text',
+        'section' => 'section_contact_modal',
+        'settings' => 'contact_modal_shortcode',
+        'priority' => 20,
+    ));
 
-        $wp_customize->add_control('contact_modal_shortcode', array(
-            'label' => esc_html__('Shortcode of the Contact 7 form', 'wpb5Translations'),
-            'description' => esc_html__('Please use the template provided in the documentation, otherwise it will not work', 'wpb5Translations'),
-            'type' => 'text',
-            'section' => 'section_contact_modal',
-            'settings' => 'contact_modal_shortcode',
-            'priority' => 20,
-        ));
+    $wp_customize->add_setting('contact_modal_link_enable', array(
+        'default' => 0,
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
 
-        $wp_customize->add_setting('contact_modal_link_enable', array(
-            'default' => 0,
-            'transport' => 'refresh',
-            'sanitize_callback' => 'sanitize_text_field'
-        ));
-
-        $wp_customize->add_control('contact_modal_link_enable', array(
-            'label' => esc_html__('Enable', 'wpb5Translations'),
-            'description' => esc_html__("Enable/Disable the ability to use a custom link? (disable the modal)", 'wpb5Translations'),
-            'type' => 'checkbox',
-            'section' => 'section_contact_modal',
-            'settings' => 'contact_modal_link_enable',
-            'priority' => 30,
-        ));
-    }
+    $wp_customize->add_control('contact_modal_link_enable', array(
+        'label' => esc_html__('Enable', 'wpb5Translations'),
+        'description' => esc_html__("Enable/Disable the ability to use a custom link? (disable the modal)", 'wpb5Translations'),
+        'type' => 'checkbox',
+        'section' => 'section_contact_modal',
+        'settings' => 'contact_modal_link_enable',
+        'priority' => 30,
+    ));
+    // }
 
     $wp_customize->add_setting('contact_modal_link', array(
         'default' => 'https://duckduckgo.com/',
@@ -499,7 +504,11 @@ function custom_css_color_output()
     if (get_theme_mod('theme_color_invert_enable')) {
         echo '--theme_color_invert_enable: invert(1);';
     }
-    echo '}</style>';
+    echo '} ';
+    if (get_theme_mod('theme_color_invert_enable')) {
+        echo '.textarea1 li{list-style-image: url("'. get_template_directory_uri() .'/icons/caret-right-fill.svg"); }';
+    }
+    echo '</style>';
 }
 add_action('wp_head', 'custom_css_color_output');
 
