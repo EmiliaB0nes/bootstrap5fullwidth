@@ -3,11 +3,10 @@
 
 //Charger les autres fichiers
 $roots_includes = array(
-    './functions-wp_customize.php',
-    './function-theme_settings_page.php',
     './function-theme_presets.php',
     './function-fontList.php',
-    './function-carbon_fields.php'
+    './function-carbon_fields.php',
+    './functions-wp_customize.php',
 );
 
 foreach ($roots_includes as $file) {
