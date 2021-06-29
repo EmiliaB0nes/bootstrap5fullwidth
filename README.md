@@ -1,1 +1,3 @@
-# bootstrap5fullwidth
+# Wordpress Theme : Bootstrap 5 Full Width
+
+## Documentation coming soon
