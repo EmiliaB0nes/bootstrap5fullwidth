@@ -1,0 +1,16 @@
+<label> Name
+    [text* your-name] </label>
+
+<label> Subname
+    [text* your-subname] </label>
+
+<label> Email
+    [email* your-email] </label>
+
+<label> Object
+    [text* your-subject] </label>
+
+<label> Your message
+    [textarea* your-message] </label>
+
+[submit "Envoyer"]
