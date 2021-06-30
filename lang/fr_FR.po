@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-06-17 15:44+0200\n"
-"PO-Revision-Date: 2021-06-17 15:44+0200\n"
+"POT-Creation-Date: 2021-06-30 13:54+0200\n"
+"PO-Revision-Date: 2021-06-30 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -19,6 +19,42 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: css\n"
 "X-Poedit-SearchPathExcluded-3: vendor\n"
 
+#: components/contactForm.php:11
+msgid "Contact Form"
+msgstr "Formulaire de contact"
+
+#: components/contactForm.php:22
+msgid "There is no shortcode!"
+msgstr "Il n'y a pas de Shortcode!"
+
+#: components/contactForm.php:23
+msgid "Please configure it in the customize menu"
+msgstr "Veuillez le configurer dans le menu personnaliser"
+
+#: components/contactForm.php:32
+msgid "Name"
+msgstr "Nom"
+
+#: components/contactForm.php:34
+msgid "Subname"
+msgstr "Prénom"
+
+#: components/contactForm.php:37
+msgid "Email"
+msgstr "Email"
+
+#: components/contactForm.php:44
+msgid "Subject"
+msgstr "Sujet"
+
+#: components/contactForm.php:46
+msgid "Message"
+msgstr "Message"
+
+#: components/contactForm.php:55
+msgid "Send"
+msgstr "Envoyer"
+
 #: function-carbon_fields.php:22
 msgid "Front Page Options"
 msgstr "Options de la page d’accueil"
@@ -27,8 +63,8 @@ msgstr "Options de la page d’accueil"
 msgid "Main Title"
 msgstr "Titre Principal"
 
-#: function-carbon_fields.php:26 function-carbon_fields.php:70
-#: function-carbon_fields.php:80
+#: function-carbon_fields.php:26 function-carbon_fields.php:73
+#: function-carbon_fields.php:83
 msgid "My Title"
 msgstr "Mon Titre"
 
@@ -60,31 +96,31 @@ msgstr "Compétence"
 msgid "Skill Logo"
 msgstr "Logo de la compétence"
 
-#: function-carbon_fields.php:62
+#: function-carbon_fields.php:65
 msgid "Competence Page Options"
 msgstr "Options de la page de compétences"
 
-#: function-carbon_fields.php:69
+#: function-carbon_fields.php:72
 msgid "List 1 Title"
 msgstr "Titre de la liste 1"
 
-#: function-carbon_fields.php:72
+#: function-carbon_fields.php:75
 msgid "Competence List 1"
 msgstr "Liste de compétences 1"
 
-#: function-carbon_fields.php:74 function-carbon_fields.php:84
+#: function-carbon_fields.php:77 function-carbon_fields.php:87
 msgid "Competence title"
 msgstr "Compétence"
 
-#: function-carbon_fields.php:76 function-carbon_fields.php:86
+#: function-carbon_fields.php:79 function-carbon_fields.php:89
 msgid "Competence Logo"
 msgstr "Logo"
 
-#: function-carbon_fields.php:79
+#: function-carbon_fields.php:82
 msgid "List 2 Title"
 msgstr "Titre de la liste 2"
 
-#: function-carbon_fields.php:82
+#: function-carbon_fields.php:85
 msgid "Competence List 2"
 msgstr "Liste de compétences 2"
 
@@ -132,109 +168,77 @@ msgstr ""
 "Activer cette option pour confirmer l’application d'un thème. Changer de "
 "thème remplacera les anciens paramètres de polices."
 
-#: functions-wp_customize.php:87
-msgid "Colors"
-msgstr "Couleurs"
-
-#: functions-wp_customize.php:99
-msgid "Color 1"
-msgstr "Couleur 1"
-
-#: functions-wp_customize.php:112
-msgid "Color 2"
-msgstr "Couleur 2"
-
-#: functions-wp_customize.php:125
-msgid "Color 3"
-msgstr "Couleur 3"
-
-#: functions-wp_customize.php:138
-msgid "Color 4"
-msgstr "Couleur 4"
-
-#: functions-wp_customize.php:151
-msgid "Color 5"
-msgstr "Couleur 5"
-
-#: functions-wp_customize.php:164
-msgid "Color 6"
-msgstr "Couleur 6"
-
-#: functions-wp_customize.php:177
-msgid "Invert the colors of logos"
-msgstr "Inverser les couleurs des logos"
-
-#: functions-wp_customize.php:187
+#: functions-wp_customize.php:191
 msgid "Fonts"
 msgstr "Polices"
 
-#: functions-wp_customize.php:199
+#: functions-wp_customize.php:203
 msgid "Text Font"
 msgstr "Police Texte"
 
-#: functions-wp_customize.php:213
+#: functions-wp_customize.php:217
 msgid "Title Font"
 msgstr "Police Titre"
 
-#: functions-wp_customize.php:223
+#: functions-wp_customize.php:227
 msgid "Jumbotron"
 msgstr "Jumbotron"
 
-#: functions-wp_customize.php:235
+#: functions-wp_customize.php:239
 msgid "Text of the main title"
 msgstr "Texte du titre principal"
 
-#: functions-wp_customize.php:249 functions-wp_customize.php:278
-#: functions-wp_customize.php:315 functions-wp_customize.php:337
-#: functions-wp_customize.php:367 functions-wp_customize.php:398
+#: functions-wp_customize.php:253 functions-wp_customize.php:282
+#: functions-wp_customize.php:319 functions-wp_customize.php:341
+#: functions-wp_customize.php:371 functions-wp_customize.php:403
 msgid "Enable"
 msgstr "Activer"
 
-#: functions-wp_customize.php:250
+#: functions-wp_customize.php:254
 msgid "Enable/Disable custom main title"
 msgstr "Activer/Désactiver le titre principal personnalisé"
 
-#: functions-wp_customize.php:264
+#: functions-wp_customize.php:268
 msgid "Subtitle text"
 msgstr "Texte du sous-titre"
 
-#: functions-wp_customize.php:279
+#: functions-wp_customize.php:283
 msgid "Enable/Disable custom subtitle"
 msgstr "Activer/Désactiver le sous-titre personnalisé"
 
-#: functions-wp_customize.php:289
+#: functions-wp_customize.php:293
 msgid "Footer"
 msgstr "Pied de page"
 
-#: functions-wp_customize.php:301
+#: functions-wp_customize.php:305
 msgid "Footer Copyright / Text"
 msgstr "Copyright / Texte de Pied de page"
 
-#: functions-wp_customize.php:316
+#: functions-wp_customize.php:320
 msgid "Enable/Disable custom footer text"
 msgstr "Activer/Désactiver le texte personnalisé de pied de page"
 
-#: functions-wp_customize.php:325
+#: functions-wp_customize.php:329
 msgid "Contact Modal"
 msgstr "Modal de contact"
 
-#: functions-wp_customize.php:338
+#: functions-wp_customize.php:342
 msgid "Enable/Disable the contact button"
 msgstr "Activer/Désactiver le bouton de contact"
 
-#: functions-wp_customize.php:352
+#: functions-wp_customize.php:356
 msgid "Customize the button title"
 msgstr "Personnaliser le titre du bouton"
 
-#: functions-wp_customize.php:368
+#: functions-wp_customize.php:372
 msgid "Enable/Disable the custom contact button Text"
 msgstr "Activer/Désactiver le titre personnalisé du bouton"
 
-#: functions-wp_customize.php:383
+#: functions-wp_customize.php:388
 msgid "Shortcode of the Contact 7 form"
 msgstr "Shortcode du formulaire Contact 7"
 
-#: functions-wp_customize.php:384
+#: functions-wp_customize.php:389
 msgid ""
 "Please use the template provided in the documentation, otherwise it will not "
 "work"
@@ -242,12 +246,36 @@ msgstr ""
 "Veuillez utiliser le template fourni dans la documentation, sinon il ne "
 "fonctionnera pas"
 
-#: functions-wp_customize.php:399
+#: functions-wp_customize.php:404
 msgid "Enable/Disable the ability to use a custom link? (disable the modal)"
 msgstr ""
 "Activer/Désactiver la possibilité d'utiliser un lien personnalisé (désactive "
 "le modal)"
 
-#: functions-wp_customize.php:414
+#: functions-wp_customize.php:419
 msgid "Custom link of the Contact button"
 msgstr "Lien personnalisé du bouton Contact"
+
+#~ msgid "Colors"
+#~ msgstr "Couleurs"
+
+#~ msgid "Color 1"
+#~ msgstr "Couleur 1"
+
+#~ msgid "Color 2"
+#~ msgstr "Couleur 2"
+
+#~ msgid "Color 3"
+#~ msgstr "Couleur 3"
+
+#~ msgid "Color 4"
+#~ msgstr "Couleur 4"
+
+#~ msgid "Color 5"
+#~ msgstr "Couleur 5"
+
+#~ msgid "Color 6"
+#~ msgstr "Couleur 6"
+
+#~ msgid "Invert the colors of logos"
+#~ msgstr "Inverser les couleurs des logos"
